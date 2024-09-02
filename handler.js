@@ -79,7 +79,8 @@ export async function handler(chatUpdate) {
           if (!isNumber(user.bibitapel)) user.bibitapel = 0;
           if (!isNumber(user.bibitjeruk)) user.bibitjeruk = 0;
           if (!isNumber(user.bibitmangga)) user.bibitmangga = 0;
-          if (!isNumber(user.bibitpisang)) user.bibitpisang = 0;
+          if (!('midLanguage' in user)) user.midLanguage = 0;
+            if (!isNumber(user.bibitpisang)) user.bibitpisang = 0;
           if (!isNumber(user.emas)) user.emas = 0;
           if (!isNumber(user.jeruk)) user.jeruk = 0;
           if (!isNumber(user.kayu)) user.kayu = 0;
@@ -170,7 +171,7 @@ export async function handler(chatUpdate) {
         if (!isNumber(user.cupon)) user.cupon = 0;
         if (!isNumber(user.diamond)) user.diamond = 3;
         if (!isNumber(user.dog)) user.dog = 0;
-	if (!isNumber(user.fantasy)) user.fantasy = 0
+	if (!isNumber(user.fantasy)) user.fantasy = 0;
         if (!isNumber(user.dogexp)) user.dogexp = 0;
         if (!isNumber(user.doglastfeed)) user.doglastfeed = 0;
         if (!isNumber(user.dory)) user.dory = 0;

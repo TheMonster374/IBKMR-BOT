@@ -6,15 +6,22 @@ import cheerio from 'cheerio';
 import fetch from 'node-fetch';
 import axios from 'axios';
 import moment from 'moment-timezone';
-// © 2024 YUNNYS | All rights reserved 
+import { es as esDefault} from "./lib/multi-language/_default.js"
+import { es} from "./lib/Idiomas/total-idiomas.js"
+// © 2024 MONSTER | All rights reserved 
 
-global.botnumber = "51974621100" //Ejemplo: +59309090909
+global.botnumber = //"59161313574"
+ //"573162527271"  
+    //"5493804170925"
+    "51974621100"
+//Ejemplo: +59309090909
 global.confirmCode = ""
 
 /*NUMERS OWNERS*/
 global.owner = [
- ['573017210155', '👑 Creador 👑', true],
- ['51974621100', 'Bot', true]
+ ['573136737414', '👑 𝑪𝒓𝒆𝒂𝒅𝒐𝒓 👑', true],
+ ['573162527271', 'Bot', true],
+ ['573017210155', 'Monster', true]
 ];
 /*└────ׂ─ׂ─ׂ─ׂ───*/
 
@@ -22,22 +29,24 @@ global.suittag = [''];
 global.prems = [''];
 global.mods = [];
 
-/*global.lenguajeGB = es
-global.mid = esDefault
-global.version_language = '1.0 (MID-GB)'*/
+// ❰❰ IDIOMAS DISPONIBLES : AVAILABLE LANGUAGES ❱❱ 
+// Español 👉 es // English 👉 en 
+global.lenguajeGB = es 
+global.mid = esDefault 
+global.version_language = '1.0 (MID-GB)' 
+// [ES] > Si "default_language" esta vacío, su idioma predeterminado será Español o se usará el idioma que cada usuario haya seleccionado al momento de registrarse. // [EN] > If "default_language" is empty, your default language will be Spanish or the language that each user has selected at the time of registration will be used.
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
 //━━━━━━━STICKERS━━━━━━━━━━━━ 
-global.packname = '𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩';
-global.ow = '𝘽𝙮 𝙈𝙤𝙣𝙨𝙩𝙚𝙧'; //'𝘽𝙮 𝙔𝙐𝙉𝙉𝙔𝙎';
-global.ow2 = '𝙈𝙤𝙣𝙨𝙩𝙚𝙧';
-global.own = 'wa.me/573017210155';
-global.wm = '𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩';
-global.titulowm = '𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩';
-global.titulowm2 = `𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩`
-global.igfg = '𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩';
+global.packname = '𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩';
+global.author = '𝑩𝒚 𝙈𝙊𝙉𝙎𝙏𝙀𝙍';
+global.wm = '𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩';
+global.vs = '𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩';
+global.titulowm = '𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩';
+global.titulowm2 = `𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩`
+global.igfg = '𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩';
 //━━━━━ESPERAS━━━━━━━━ 
 global.wait = '*𝑪𝒂𝒓𝒈𝒂𝒏𝒅𝒐. ⏳*'; 
 global.waitt = '*𝑪𝒂𝒓𝒈𝒂𝒏𝒅𝒐.. ⏳*';
@@ -50,18 +59,19 @@ global.imagen3 = fs.readFileSync('./src/Pre Bot Publi.png');
 global.imagen4 = fs.readFileSync('./Menu.png');
 global.imagen5 = fs.readFileSync('./src/Menunsfw.jpg');
 global.imagen6 = fs.readFileSync('./Menu3.png');
-global.imagen8 = fs.readFileSync('./storage/img/menus/Menu5.mp4');
-global.imagen9 = fs.readFileSync('./storage/img/menus/Menu6.mp4');
-global.imagen10 = fs.readFileSync('./storage/img/menus/Menu7.mp4');
-global.imagen11 = fs.readFileSync('./storage/img/menus/Menu8.mp4');
+global.gif = fs.readFileSync('./storage/img/menus/Tutorial.mp4');
+global.imagen8 = fs.readFileSync('./storage/img/menus/Menu5.jpg');
+global.imagen9 = fs.readFileSync('./storage/img/menus/Menu6.jpg');
+global.imagen10 = fs.readFileSync('./storage/img/menus/Menu7.png');
+global.imagen11 = fs.readFileSync('./storage/img/menus/Menu8.jpg');
 
 
 global.img1 = fs.readFileSync('./src/daily.png');
-global.img2 = fs.readFileSync('./storage/img/menus/Menu9.mp4');
-global.img3 = fs.readFileSync('./storage/img/menus/Menu10.mp4');
-global.img4 = fs.readFileSync('./storage/img/menus/Menu11.mp4');
-global.img5 = fs.readFileSync('./storage/img/menus/Menu11.mp4');
-
+global.img2 = fs.readFileSync('./storage/img/menus/Menu9.jpg');
+global.img3 = fs.readFileSync('./storage/img/menus/Menu10.jpg');
+global.img4 = fs.readFileSync('./storage/img/menus/Menu11.jpg');
+global.img5 = fs.readFileSync('./storage/img/menus/Menu11.jpg');
+global.img6 = fs.readFileSync('./follar.png');
 
 global.gataMenu = [img1] 
 
@@ -90,9 +100,9 @@ global.desc = 'BOT PARA WHATSAPP CON MULTIPLES COMANDOS, BY MONSTER'
 //Enlaces
 global.yt = 'https://chat.whatsapp.com/L2uawSeQhM2I2oe0C3K1sS'
 global.ig = 'https://chat.whatsapp.com/L2uawSeQhM2I2oe0C3K1sS'
-//global.paypal = 'https://paypal.me/monster373505?country.x=CO&locale.x=es_XC'
-//global.md = 'https://atom.bio/tm';
-global.git = 'https://github.com/TheMonster374/Lucoa-Bot'
+global.paypal = 'https://paypal.me/monster373505?country.x=CO&locale.x=es_XC'
+global.md = 'https://atom.bio/tm';
+global.git = 'https://github.com/TheMonster374/INABAKUMORI-Bot'
 global.linkwabot = 'https://chat.whatsapp.com/L2uawSeQhM2I2oe0C3K1sS'
 global.email = 'https://chat.whatsapp.com/L2uawSeQhM2I2oe0C3K1sS'
 global.group = 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc' //Grupo ofc
@@ -116,8 +126,8 @@ global.fgif = {key: {participant: '0@s.whatsapp.net'}, message: {'videoMessage':
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 
 //━━━━━━━━━━━━━━━━━━━━━━ 
-global.addescargas = `𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩 𝘽𝙮 𝙈𝙤𝙣𝙨𝙩𝙚𝙧`
-global.adimagen = `𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩 𝘽𝙮 𝙈𝙤𝙣𝙨𝙩𝙚𝙧` 
+global.addescargas = `𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩 𝑩𝒚 𝙈𝙊𝙉𝙎𝙏𝙀𝙍`
+global.adimagen = `𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩 𝑩𝒚 𝙈𝙊𝙉𝙎𝙏𝙀𝙍` 
 
 //━━━━━━━━━━━━━━━━━━━━━━ 
 global.apikasu = "https://apikasu.onrender.com"
@@ -142,13 +152,13 @@ global.mes = d.toLocaleDateString('es', {month: 'long'});
 global.año = d.toLocaleDateString('es', {year: 'numeric'});
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
-global.gt = '𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩';
+global.gt = '𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩';
 
 global.lolkey = 'Papah-Chan' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
 
 global.nomorown = '5491144775561';
-global.wm2 = `${dia} ${fecha}\n𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩`
+global.wm2 = `${dia} ${fecha}\n𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩`
 global.multiplier = 99;
 /* RPG */
 global.flaaa = [

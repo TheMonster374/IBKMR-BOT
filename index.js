@@ -14,15 +14,15 @@ const {name, author} = require(join(__dirname, './package.json'));
 const {say} = cfonts;
 const rl = createInterface(process.stdin, process.stdout);
 
-say('Lucoa-Bot', {
+say('IBKMR-BOT', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']});
-say('Version 1.0.6', {
+say('Version 1.1.1', {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']});
-say(`By Yunnys`, {
+say(`By Monster`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']});

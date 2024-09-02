@@ -1,19 +1,22 @@
-#                                                    [🐲] 𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩
+#                                                    INABAKUMORI-Bot
 
 
 <p align="center">
-<img src="https://i.makeagif.com/media/3-27-2017/dj_6zT.gif" alt="Lucoa" width="500"/>
+<img src="https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif" alt="INABAKUMORI" width="500"/>
+
+## ✨ PÁGINA OFICIAL 👇:
+[![Enlaces](https://img.shields.io/badge/INABAKUMORI_ACCOUNTS-000000%7D?style=for-the-badge&logo=biolink&logoColor=white)](https://www.atom.bio/tm/)
 
 
-## 🐲 GRUPO OFICIAL DEL BOT
+## 🤍 GRUPO OFICIAL DEL BOT
 
 <a href="https://chat.whatsapp.com/L2uawSeQhM2I2oe0C3K1sS" target="blank"><img src="https://img.shields.io/badge/GRUPO OFICIAL-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 
 
 
 ### `⚙️ OPCIONES`
-- CLONAR EL REPOSITORIO [Aqui](https://github.com/TheMonster374/Lucoa-Bot/fork)
-- CAMBIAR NÚMERO DEL PROPIETARIO(A) [Aqui](https://github.com/TheMonster374/Lucoa-Bot/blob/master/config.js)
+- CLONAR EL REPOSITORIO [Aqui](https://github.com/TheMonster374/INABAKUMORI-Bot/fork)
+- CAMBIAR NÚMERO DEL PROPIETARIO(A) [Aqui](https://github.com/TheMonster374/INABAKUMORI-Bot/blob/master/config.js)
 
 
 ## 👨‍💻 ACTIVAR EN TERMUX
@@ -31,7 +34,7 @@ pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn
 ```
 
 ```bash
-git clone https://github.com/TheMonster374/Lucoa-Bot.git && cd Lucoa-Bot
+git clone https://github.com/TheMonster374/INABAKUMORI-Bot.git && cd INABAKUMORI-Bot
 ```
 
 ```bash
@@ -54,16 +57,16 @@ npm start
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd 
-> cd Lucoa-Bot
+> cd INABAKUMORI-Bot
 > npm start
 ```
 
 ###  ✅ OBTENER OTRO CODIGO QR EN TERMUX
-- DETEN EL BOT, HAZ CLICK EN EL SIMBOLO CTRL DE TERMUX + Z EN SU TECLADO MOVIL HASTA QUE SALGA ALGO EN VERDE SIMILAR A Lucoa-Bot $  
+- DETEN EL BOT, HAZ CLICK EN EL SIMBOLO CTRL DE TERMUX + Z EN SU TECLADO MOVIL HASTA QUE SALGA ALGO EN VERDE SIMILAR A INABAKUMORI-Bot $  
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd 
-> cd Lucoa-Bot
+> cd INABAKUMORI-Bot
 > rm -rf JTSession
 > npm start
 ```
@@ -72,10 +75,13 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 
            CREDITOS
 
+<a href="https://github.com/BrunoSobrino"><img src="https://github.com/BrunoSobrino.png" width="150" height="150" alt="BrunoSobrino"/></a>
+
+
 ## CREADOR DEL BOT ORIGINAL 
-<a href="https://github.com/TheMonster374"><img src="https://github.com/TheMonster374.png" width="250" height="250" alt="Monster"/></a>
+<a href="https://github.com/AleXD0009"><img src="https://github.com/AleXD0009.png" width="250" height="250" alt="AleXD0009"/></a>
 
 ## EDITOR Y PROPIETARIO
-<a href="https://github.com/Yunnys99"><img src="https://github.com/Yunnys99.png" width="250" height="250" alt="Yunnis"/></a>
+<a href="https://github.com/TheMonster374"><img src="https://github.com/TheMonster374.png" width="250" height="250" alt="Monster"/></a>
 
-`Lucoa-Bot by Yunnys`
+`INABAKUMORI-Bot by MONSTER`

@@ -128,7 +128,7 @@ opcion = '1'
 if (!methodCodeQR && !methodCode && !fs.existsSync(`./${authFile}/creds.json`)) {
 do {
 let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
-opcion = await question('[ 🐲 ] Seleccione una opción:\n1. Con código QR\n2. Con código de texto de 8 dígitos\n---> ')
+opcion = await question('[ 🤍 ] Seleccione una opción:\n1. Con código QR\n2. Con código de texto de 8 dígitos\n---> ')
 //if (fs.existsSync(`./${authFile}/creds.json`)) {
 //console.log(chalk.bold.redBright(`PRIMERO BORRE EL ARCHIVO ${chalk.bold.greenBright("creds.json")} QUE SE ENCUENTRA EN LA CARPETA ${chalk.bold.greenBright(authFile)} Y REINICIE.`))
 //process.exit()
@@ -141,7 +141,7 @@ const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: opcion == '1' ? ['Lucoa-Bot', 'Safari', '2.0.0'] : methodCodeQR ? ['Lucoa-Bot', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '110.0.5585.95'],
+browser: opcion == '1' ? ['INABAKUMORI-BOT', 'Safari', '2.0.0'] : methodCodeQR ? ['INABAKUMORI-BOT', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '110.0.5585.95'],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -201,7 +201,7 @@ rl.close()
 
 conn.isInit = false;
 conn.well = false;
-conn.logger.info(`[ 🐲 ] Cargando...\n`);
+conn.logger.info(`[ 🤍 ] Cargando...\n`);
 
 if (!opts['test']) {
   if (global.db) {
@@ -295,7 +295,7 @@ if (opcion == '1' || methodCodeQR) {
     console.log(chalk.yellow('Escanea el código QR.'));
  }}
    if (connection == 'open') {
-console.log(chalk.yellowBright('\n╭━─━━─━━─━─≪ 🐲 ≫─━─━━─━━─━╮\n│\n│Lucoa-Bot Conectado✅.\n│\n╰━─━━━─━━─━─≪ 🟢 ≫─━─━━─━━━─━╯\n'))
+console.log(chalk.yellowBright('\n╭━─━━─━━─━─≪ 🤍 ≫─━─━━─━━─━╮\n│\n│INABAKUMORI-BOT Conectado✅.\n│\n╰━─━━━─━━─━─≪ 🟢 ≫─━─━━─━━━─━╯\n'))
  await conn.groupAcceptInvite('GR9pMnqYI8DB9HoJnl2HkB');
    }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
@@ -366,14 +366,14 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '*hola @user Bienvenido a @subject, escribe .menu para ver mis comandos*';
-  conn.bye = '*@user, salió del grupo*'; 
-  conn.spromote = '*@user Ahora es admin*';
-  conn.sdemote = '*@user Ya no es admin*';
-  conn.sDesc = '*Se modifico la descripcion*';
-  conn.sSubject = '*Se modifico el nombre del grupo*';
-  conn.sIcon = '*Se cambio la foto del grupo*';
-  conn.sRevoke = '*Se restablecio el enlace del grupo*';
+  conn.welcome = '*hola @user Bienvenido a @subject, escribe ".menu" para ver las funciones que poseo* \n\n> Inabakumori-Bot                                                   By Monster';
+  conn.bye = '*Unculiaomenos @user, salió del grupo 🗿🚬*\n\n> Inabakumori-Bot                                                   By Monster'; 
+  conn.spromote = '*@user Ahora es admin*\n\n> Inabakumori-Bot                                                   By Monster';
+  conn.sdemote = '*@user Ya no es admin*\n\n> Inabakumori-Bot                                                   By Monster';
+  conn.sDesc = '*Se modifico la descripcion*\n\n> Inabakumori-Bot                                                   By Monster';
+  conn.sSubject = '*Se modifico el nombre del grupo*\n\n> Inabakumori-Bot                                                   By Monster';
+  conn.sIcon = '*Se cambio la foto del grupo*\n\n> Inabakumori-Bot                                                   By Monster';
+  conn.sRevoke = '*Se restablecio el enlace del grupo*\n\n> Inabakumori-Bot                                                   By Monster';
 
   conn.handler = handler.handler.bind(global.conn);
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn);
@@ -528,7 +528,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `🐲 𝙇𝙪𝙘𝙤𝙖-𝘽𝙤𝙩|⌛ 𝑻𝒊𝒆𝒎𝒑𝒐 𝑨𝒄𝒕𝒊𝒗𝒐: ${uptime}`;
+  const bio = `🤍 𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩 |⌛ 𝑻𝒊𝒆𝒎𝒑𝒐 𝑨𝒄𝒕𝒊𝒗𝒐: ${uptime}`;
   await conn.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 function clockString(ms) {

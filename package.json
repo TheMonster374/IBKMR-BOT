@@ -26,13 +26,19 @@
     "type": "git",
     "url": "git+https://github.com/TheMonster374/INABAKUMORI-Bot.git"
   },
+    
+    
+    
   "bugs": {
     "url": "https://github.com/TheMonster374/INABAKUMORI-Bot/issues"
   },
+
+
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "^4.2.4",
+      "@xct007/frieren-scraper": "^0.0.2",
     "@brandond/findthelyrics": "^2.0.5",
     "@green-code/music-track-data": "^2.0.3",
     "@sasmeee/igdl": "npm:@sasmeee/igdl",
@@ -72,6 +78,8 @@
     "moment-timezone": "^0.5.34",
     "mongoose": "^6.3.3",
     "node-fetch": "^3.2.0",
+    "didyoumean":"^1.2.2",
+    "similarity":"^1.2.1",
     "node-gtts": "^2.0.2",
     "node-id3": "^0.2.6",
     "node-webpmux": "^3.1.1",
