@@ -3,7 +3,7 @@ import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 import axios from 'axios';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `*_ingresa el nombre de una cancion_*\n\n*ejemplo:*\n${usedPrefix + command} 12 - YSY A - SER EL TRAP ( PROD. BAXIAN )`
+if (!text) throw '*_Ingresa el nombre de una cancion_*\n\n`Ejemplo:`\n\n> .play Longtrail Inabakumori'
 try {
 let limit = 70;
 let ytse = await yts(text);
@@ -33,7 +33,7 @@ conn.sendFile(m.chat, vid.thumbnail, '', play, m)
 let thumbnailBuffer = await axios.get("https://telegra.ph/file/8f3ca5a8841f26959aa69.jpg", { responseType: 'arraybuffer' })
 let buffer = await getBuffer(dl_url)
 let bufferSize = buffer.byteLength
-let contextInfo = {
+/*let contextInfo = {
 forwardingScore: 99999,
 isForwarded: false,
 externalAdReply: {
@@ -41,16 +41,16 @@ showAdAttribution: true,
 title: vid.title,
 body: null,
 mediaType: 2,
-sourceUrl: ${shortURL},
+sourceUrl: 'https://atom.bio/tm',
 thumbnail: Buffer.from(thumbnailBuffer.data),
-}}    
+}}    */
 if (bufferSize <= limit * 1024 * 1024) { 
-conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3', contextInfo, quoted: m })
+conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3', /*contextInfo,*/ quoted: m })
 } else {
 if (bufferSize >= 180 * 1024 * 1024) { 
 return m.reply(`El archivo supera el límite de tamaño de descarga (150 MB) y excede el límite de 180 MB como documento.`)
 }
-conn.sendMessage(m.chat, { document: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3', contextInfo, quoted: m })
+conn.sendMessage(m.chat, { document: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3',/* contextInfo,*/ quoted: m })
 }} catch (error) {
 }}
 handler.help = ["play"].map(v => v + " <búsqueda>")

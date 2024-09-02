@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 import fs from 'fs'
 
 const fantasyDBPath = './fantasy.json'
-const jsonURL = 'https://raw.githubusercontent.com/TheMonster374/INABAKUMORI-Bot/master/src/anime.json'
+const jsonURL = 'https://raw.githubusercontent.com/TheMonster374/anime/main/anime.json'
 
 let handler = async (m, { command, usedPrefix, text, conn }) => {
 let user = global.db.data.users[m.sender]
@@ -25,6 +25,8 @@ const origen = personaje.desp
 const descripcion = personaje.info
 const precio = personaje.price
 const clase = personaje.class
+const atq = personaje.atq
+const def = personaje.def
 const tipo = personaje.type
 const codigo = personaje.code
 
@@ -78,38 +80,44 @@ respuestas.push('err-gb')
 let mensaje = `
 > 🌟 *Detalles del personaje* 🌟
 
-*Nombre:* 
+*✨ Nombre:* 
 ✓ ${nombre}
 
-*Origen:*
+*🧿 Origen:*
 ✓ ${origen}
 
-*Precio:* 
+*🪙​ Precio:* 
 ✓ \`${precio}\` *${rpgshop.emoticon('money')}*
 
-*Clase:* 
+*🌠​ Clase:* 
 ✓ ${clase}
 
-*Tipo:* 
+*⚔️​ Ataque:* 
+✓ ${atq}
+
+*🛡️​ Defensa:* 
+✓ ${def}
+
+*📍​ Tipo:* 
 ✓ ${tipo}
 
-*Código:* 
+*🆔​ Código:* 
 ✓ ${codigo}
 
-*Descripción:* 
+*ℹ️​ Descripción:* 
 ✓ ${descripcion}
 
-⟡ *Calificación total del personaje »* \`${calificacionTotal}\`
+⟡ *⭐​ Calificación total del personaje »* \`${calificacionTotal}\`
 ⟡ *Cantidad de 👍 (Me gusta) »* \`${cantidadLikes}\`
 ⟡ *Cantidad de ❤️ (Me encanta) »* \`${cantidadSuperlikes}\`
 ⟡ *Cantidad de 👎 (No me gusta) »* \`${cantidadDislikes}\`
 
-*Estado:* 
+*✅​ Estado:* 
 ✓ ${estado}
 `
 
 mensaje += `
-> 👩‍🔬 Función Experimental 🧪
+> 💫​ Datos curiosos acerca del personaje
 > ✨ *Información basada en IA* ✨\n
 ${respuestas.some(respuesta => respuesta === 'err-gb') ? '`En este momento no se puede acceder a este recurso`' :
 preguntas.map((pregunta, index) => `*✪ ${pregunta}*\n${respuestas[index]}`).join('\n\n')}

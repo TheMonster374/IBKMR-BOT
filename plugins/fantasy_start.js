@@ -1,18 +1,117 @@
 // Código elaborado por: https://github.com/GataNina-Li
 
+
+
+// Código elaborado por: https://github.com/GataNina-Li
+
 import fetch from 'node-fetch'  
 import fs from 'fs'
 const fantasyDBPath = './fantasy.json'
-let jsonURL = 'https://raw.githubusercontent.com/TheMonster374/INABAKUMORI-Bot/master/src/anime.json'
+let jsonURL = 'https://raw.githubusercontent.com/TheMonster374/anime/main/anime.json'
 let id_message, pp, dato, fake, user, estado, idUsuarioExistente, nombreImagen, fantasyDB, response, data, userId, voto, emojiSaved = null
 const likeEmojisArrays = ['👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿']
 const dislikeEmojisArrays = ['👎', '👎🏻', '👎🏼', '👎🏽', '👎🏾', '👎🏿']
 const superlikeEmojisArrays = ['🩷', '❤️', '🧡', '💛', '💚', '🩵', '💙', '💜', '🖤', '🩶', '🤍', '🤎']
 
+
+const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
+    
+  if (usedPrefix == 'a' || usedPrefix == 'A') return;
+    
+ let pp = "https://telegra.ph/file/b4f7a68e142e03ac84221.mp4"
+
+  try {
+    const locale = 'es-ES';
+    const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
+    const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const document = doc[Math.floor(Math.random() * doc.length)];
+    const str = `
+
+      > ¡Lo sentimos!
+
+Estamos agregando nuevas fantasys, *el comando #fantasy actualmente no esta disponible*, en el canal de ibkmr se avisará cuando ya este nuevamente activo, gracias por la paciencia ;)
+
+>------------[📢]-------------<
+
+*[𝙉𝙊𝙏𝙄𝘾𝙄𝘼𝙎] • ლ 𝙄𝙉𝘼𝘽𝘼𝙆𝙐𝙈𝙊𝙍𝙄-𝘽𝙤𝙩 ღ:* 
+
+https://whatsapp.com/channel/0029VabyyaKGehEIyunTGo0t
+
+
+> Inabakumori-Bot                                                   By Monster
+ 
+ 
+  
+    `.trim();
+    if (m.isGroup) {
+      const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
+      conn.sendMessage(m.chat, { video: { url: pp }, gifPlayback: true, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: m});
+    } else {
+       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
+      conn.sendMessage(m.chat, { video: { url: pp }, gifPlayback: true, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: m});
+    }
+  } catch {
+    conn.reply(m.chat, '*[❌] ocurrio un error inesperado*', m);
+  }
+};
+
+handler.help = ['fantasy']
+handler.tags = ['rpg']
+handler.command = /^(fantasy|fy)$/i
+handler.register = true
+export default handler
+
+function msToTime(duration) {
+var milliseconds = parseInt((duration % 1000) / 100),
+seconds = Math.floor((duration / 1000) % 60),
+minutes = Math.floor((duration / (1000 * 60)) % 60),
+hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
+hours = (hours < 10) ? "0" + hours : hours
+minutes = (minutes < 10) ? "0" + minutes : minutes
+seconds = (seconds < 10) ? "0" + seconds : seconds
+return hours + " Hora(s) " + minutes + " Minuto(s)"}
+  
+
+export function listaAvisos(usedPrefix, personaje) {
+const avisos = [
+`> 🤩 ¡Agrega un personaje ahora! usando *${usedPrefix}fyagregar* o *${usedPrefix}fyadd*`,
+`> 👀 *¿Qué tal ${personaje}?* ¡Califica!\n_Responde a este mensaje con:_\n*"${likeEmojisArrays.getRandom()}", "${dislikeEmojisArrays.getRandom()}", o "${superlikeEmojisArrays.getRandom()}"*\n\n> ⚠️ *Solo puede calificar si ha comprado mínimo un Personaje*`,
+`> ¡Para ser un Pro 😎 en *RPG Fantasy* visita la guía 📜!\n*Comienza a explorar usando:*\n\`${usedPrefix}fyguia o ${usedPrefix}fyguide\``,
+`> *Conoce más de ${personaje} usando:*\n\`${usedPrefix}fyinfo\``,
+`> *¿Quieres saber la lista de personajes 🤭?*\n*Consulta usando:* \`${usedPrefix}fylista o ${usedPrefix}fyl\``,
+`> 🛒 Compra, ${superlikeEmojisArrays.getRandom()} califica, 🔄 cambia  y mucho más para ganar *recompensas extras 🎁*`,
+`> 🌟 *¡Mira quien es tendencia!*\n\`${usedPrefix}fytendencia o ${usedPrefix}fyranking\`\n\n👀 _Mira avances de otros respondiendo al mensaje de alguien con *${usedPrefix}fytendencia*_`,
+`> *Te digo un secreto* 😳\n_Mientras más uses los comandos *RPG Fantasy*, las 🎁 Recomepesas futuras se multiplican ☝️🤑_`,
+`> 🌟 *Mira avances, misiones, datos de lo que has conseguido usando:*\n\`${usedPrefix}fymy\``,
+`> *¡Recuerda responder a este mensaje con "c", o "🛒" para comprar personajes!*`,
+`> 😁 *¡Pensamos en todo!* Transfiere cualquier personaje a tú Amigo/a usando:\n*${usedPrefix}fyentregar*, *${usedPrefix}fytransfer* o *${usedPrefix}fytr*`,
+`> ⚠️ *Alerta* ⚠️ Calificar a *${personaje}* puede hacer que el precio suba o baje 😱 !Califica con sabiduría! 😸`
+].getRandom()
+return avisos.trim()
+    }
+    
+/*
+
+import fetch from 'node-fetch'  
+import fs from 'fs'
+const fantasyDBPath = './fantasy.json'
+let jsonURL = 'https://raw.githubusercontent.com/TheMonster374/anime/main/anime.json'
+let id_message, pp, dato, fake, user, estado, idUsuarioExistente, nombreImagen, fantasyDB, response, data, userId, voto, emojiSaved = null
+const likeEmojisArrays = ['👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿']
+const dislikeEmojisArrays = ['👎', '👎🏻', '👎🏼', '👎🏽', '👎🏾', '👎🏿']
+const superlikeEmojisArrays = ['🩷', '❤️', '🧡', '💛', '💚', '🩵', '💙', '💜', '🖤', '🩶', '🤍', '🤎']
+
+
+const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
+    
+  if (usedPrefix == 'a' || usedPrefix == 'A') return;
 let handler = async (m, { command, usedPrefix, conn }) => {
+    
+// 60000 = 1 MINUTO // 30000 = 30 SEGUNDOS // 15000 = 15 SEGUNDOS // 10000 = 10 SEGUNDOS       
 let user = global.db.data.users[m.sender]
-//let time = user.fantasy + 300000 //5 min
-//if (new Date - user.fantasy < 300000) return await conn.reply(m.chat, `⏱️ 𝙑𝙪𝙚𝙡𝙫𝙖 𝙚𝙣 ${msToTime(time - new Date())} 𝙉𝙊 𝙃𝘼𝙂𝘼 𝙎𝙋𝘼𝙈`, m)
+const time = global.db.data.users[m.sender].fantasy + 60000;
+if (new Date - global.db.data.users[m.sender].fantasy < 60000) throw `⏱️ 𝙑𝙪𝙚𝙡𝙫𝙖 𝙚𝙣  ${msToTime(time - new Date())} SEGUNDOS 𝙉𝙊 𝙃𝘼𝙂𝘼 𝙎𝙋𝘼𝙈`;
+    
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 try {
@@ -67,9 +166,9 @@ if (nuevoPrecio < 50) {
 nuevoPrecio = 50
 }
     
-let txtNewPrice = nuevoPrecio !== dato.price ? `\n✓ *Precio anterior:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n✓ *Nuevo Precio:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*` : `\n✓ *Precio:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
-let info = `*⛱️ FANTASÍA RPG ⛱️*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *Nombre:* ${dato.name}\n✓ *Origen:* ${dato.desp}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*${txtNewPrice}\n✓ *Clase:* ${dato.class}\n✓ *ID:* \`\`\`${codigoActual}\`\`\`\n✓ *Tipo:* ${dato.type}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *Estado:* ${estado}`
-info += `\n\n${estado === 'Libre' ? '_Responde a este mensaje con "c", "🛒", o "🐱" para comprarlo_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
+let txtNewPrice = nuevoPrecio !== dato.price ? `\n✓ *🪙​ Precio anterior:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n✓ *🪙​ Nuevo Precio:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*` : `\n✓ *🪙​ Precio:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
+let info = `*⛱️ FANTASÍA RPG ⛱️*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *✨Nombre:* ${dato.name}\n✓ *🧿 Origen:* ${dato.desp}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*${txtNewPrice}\n✓ *🌠​ Clase:* ${dato.class}\n*✓ ⚔️​ Ataque:* ${dato.atq}\n*✓ 🛡️​ Defensa:* ${dato.def}\n✓ *🆔​ ID:* \`\`\`${codigoActual}\`\`\`\n✓ *📍​ Tipo:* ${dato.type}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *✅​ Estado:* ${estado}`
+info += `\n\n${estado === 'Libre' ? '_Responde a este mensaje con "c", o "🛒" para comprarlo_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
 id_message = (await conn.sendFile(m.chat, dato.url, 'error.jpg', info.trim(), fkontak, true, {
 contextInfo: {
 'forwardingScore': 200,
@@ -214,7 +313,7 @@ break
 fs.writeFileSync(fantasyDBPath, JSON.stringify(fantasyDB, null, 2), 'utf8')}
 }}}}}
       
-if (m.quoted && m.quoted.id === id_message && ['c', '🛒', '🐱'].includes(m.text.toLowerCase())) {
+if (m.quoted && m.quoted.id === id_message && ['c', '🛒'].includes(m.text.toLowerCase())) {
 //console.log(nuevoPrecio)
 const cantidadFaltante = nuevoPrecio - user.money
 if (user.money < nuevoPrecio) {
@@ -224,12 +323,12 @@ const id = Object.keys(user)[0]
 const fantasy = user[id].fantasy
 return fantasy.some(personaje => personaje.id === codigoActual)
 })
-fake = { contextInfo: { externalAdReply: { title: `¡Ese Personaje ya fue comprado!`, body: `😅 Compra otro personaje`, sourceUrl: null, thumbnailUrl: imagen1 } } }        
+fake = { contextInfo: { externalAdReply: { title: `¡Ese Personaje ya fue comprado!`, body: `😅 Compra otro personaje`, sourceUrl: null, thumbnailUrl: dato.url } } }        
 if (idUsuarioExistente) {
 let No_compra = `*${nombreImagen}* ya fue comprado por *${conn.getName(idUsuarioExistente)}*`
 if (usuarioExistente) return conn.reply(m.chat, No_compra, m, fake)
 }
-fake = { contextInfo: { externalAdReply: { title: `¡Insuficientes ${rpgshop.emoticon('money')}!`, body: `😼 Completa misiones del RPG`, sourceUrl: channel, thumbnailUrl: imagen6 } } }
+fake = { contextInfo: { externalAdReply: { title: `¡Insuficientes ${rpgshop.emoticon('money')}!`, body: `🤍 Completa misiones del RPG`, sourceUrl: channel, thumbnailUrl: dato.url } } }
 conn.reply(m.chat, `Te falta *${cantidadFaltante} ${rpgshop.emoticon('money')}* para comprar a *${dato.name}*\n\n*Actualmente tienes ${user.money} ${rpgshop.emoticon('money')}*`, m, fake)
 } else {
 response = await fetch(jsonURL)
@@ -253,11 +352,11 @@ const nombrePersonaje = data.infoImg.find(personaje => personaje.code === dato.c
 
 if (nombrePersonaje) {
 if (m.sender == idUsuarioConCodigo) {
-fake = { contextInfo: { externalAdReply: { title: `😊 Ya fue comprado antes`, body: `🌟 ¡Compra más para llegar al top!`, sourceUrl: null, thumbnailUrl: imagen5 } } }
+fake = { contextInfo: { externalAdReply: { title: `😊 Ya fue comprado antes`, body: `🌟 ¡Compra más para llegar al top!`, sourceUrl: null, thumbnailUrl: dato.url } } }
 const mensaje_ = `El personaje *${nombrePersonaje}* ya es tuyo!!`
 conn.reply(m.chat, mensaje_, m, fake)
 } else {
-fake = { contextInfo: { externalAdReply: { title: `❌ No puedes comprar esto: ${nombrePersonaje}`, body: `🙂 ¡Compra otro personaje!`, sourceUrl: null, thumbnailUrl: imagen1 } } }
+fake = { contextInfo: { externalAdReply: { title: `❌ No puedes comprar esto: ${nombrePersonaje}`, body: `🙂 ¡Compra otro personaje!`, sourceUrl: null, thumbnailUrl: dato.url } } }
 const mensaje = `Este personaje *${nombrePersonaje}* está reclamado por *${nombreUsuario}*`
 conn.reply(m.chat, mensaje, m, fake)
         
@@ -310,27 +409,25 @@ userInDB[userId].record[0].total_purchased += 1
 fs.writeFileSync(fantasyDBPath, JSON.stringify(fantasyDB, null, 2), 'utf8')}
 
 }}}
-//user.fantasy = new Date * 1  
+global.db.data.users[m.sender].wait = new Date * 1;  
 }}
-
 handler.help = ['fantasy']
 handler.tags = ['rpg']
 handler.command = /^(fantasy|fy)$/i
 handler.register = true
-export default handler
+export default handler    
+
 
 function msToTime(duration) {
 var milliseconds = parseInt((duration % 1000) / 100),
 seconds = Math.floor((duration / 1000) % 60),
 minutes = Math.floor((duration / (1000 * 60)) % 60),
 hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
-
 hours = (hours < 10) ? "0" + hours : hours
 minutes = (minutes < 10) ? "0" + minutes : minutes
 seconds = (seconds < 10) ? "0" + seconds : seconds
-
-return minutes + " m y " + seconds + " s " 
-}  
+return hours + " Hora(s) " + minutes + " Minuto(s)"}
+  
 
 export function listaAvisos(usedPrefix, personaje) {
 const avisos = [
@@ -343,9 +440,12 @@ const avisos = [
 `> 🌟 *¡Mira quien es tendencia!*\n\`${usedPrefix}fytendencia o ${usedPrefix}fyranking\`\n\n👀 _Mira avances de otros respondiendo al mensaje de alguien con *${usedPrefix}fytendencia*_`,
 `> *Te digo un secreto* 😳\n_Mientras más uses los comandos *RPG Fantasy*, las 🎁 Recomepesas futuras se multiplican ☝️🤑_`,
 `> 🌟 *Mira avances, misiones, datos de lo que has conseguido usando:*\n\`${usedPrefix}fymy\``,
-//`> *¡Recuerda responder a este mensaje con "c", "🛒", o "🐱" para comprar personajes!*`,
+`> *¡Recuerda responder a este mensaje con "c", o "🛒" para comprar personajes!*`,
 `> 😁 *¡Pensamos en todo!* Transfiere cualquier personaje a tú Amigo/a usando:\n*${usedPrefix}fyentregar*, *${usedPrefix}fytransfer* o *${usedPrefix}fytr*`,
 `> ⚠️ *Alerta* ⚠️ Calificar a *${personaje}* puede hacer que el precio suba o baje 😱 !Califica con sabiduría! 😸`
 ].getRandom()
 return avisos.trim()
-    }
+    }*/
+
+
+

@@ -6,7 +6,7 @@ let currentPage = null
 const fantasyDBPath = './fantasy.json'
 
 let handler = async (m, { command, usedPrefix, conn, text }) => {
-const jsonURL = 'https://raw.githubusercontent.com/TheMonster374/INABAKUMORI-Bot/master/src/anime.json'
+const jsonURL = 'https://raw.githubusercontent.com/TheMonster374/anime/main/anime.json'
 const response = await fetch(jsonURL)
 const data = await response.json()
 
