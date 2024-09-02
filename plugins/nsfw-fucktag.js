@@ -3,7 +3,10 @@ import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
 if (!db.data.chats[m.chat].nsfw && m.isGroup) throw `el nsfw esta desactivado`;
     
-if (!text) throw `*Por favor, menciona el usuario*`;
+ let who
+if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
+else who = m.chat
+if (!who) throw `*[❗] Por favor, menciona el usuario*`
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
     
  let pp = 'https://telegra.ph/file/e427bf7e1e28350ff4c62.mp4' 
@@ -20,8 +23,9 @@ if (!text) throw `*Por favor, menciona el usuario*`;
     const document = doc[Math.floor(Math.random() * doc.length)];
     const str = `
 
-    🤤¡${taguser} SE HA COGIDO A ${text}!🤤\n
-😈¡${text}! *TE HA VIOLADO*😈\n
+    🤤¡${taguser} SE HA COGIDO A @${who.split`@`[0]}!🤤\n
+😈¡
+@${who.split`@`[0]}! *TE HAN VIOLADO*😈\n
 *¡QUE PUTA ERES!* 🥵
   
     `.trim();
@@ -37,7 +41,7 @@ if (!text) throw `*Por favor, menciona el usuario*`;
   }
 };
 handler.help = ['fuck'].map((v) => v + ' <@usuario>');
-handler.tags = ['nsfw'];
+handler.tags = ['nsfw', 'react'];
 handler.command = /^(fuck)$/i;
 handler.register = true;
 export default handler;

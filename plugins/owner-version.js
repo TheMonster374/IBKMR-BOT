@@ -49,6 +49,3 @@ handler.tags = ['owner'];
 handler.command = /^(upt)$/i;
 handler.owner = true;
 export default handler;
-
-
-        

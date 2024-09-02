@@ -3,7 +3,10 @@ import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
 if (!db.data.chats[m.chat].nsfw && m.isGroup) throw `el nsfw esta desactivado`;
     
-if (!text) throw `*Por favor, menciona el usuario*`;
+ let who
+if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
+else who = m.chat
+if (!who) throw `*[❗] Por favor, menciona el usuario*`
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
     
  let pp = 'https://telegra.ph/file/345231d7ae10203e8629b.mp4' 
@@ -20,9 +23,9 @@ if (!text) throw `*Por favor, menciona el usuario*`;
     const document = doc[Math.floor(Math.random() * doc.length)];
     const str = `
 
-    🤤¡TE HAS CORRIDO EN ${text}!🤤 \n
+    🤤¡TE HAS CORRIDO EN @${who.split`@`[0]}!🤤 \n
 😈¡${taguser}! *TE HA CUMEADO* 😈 \n
-*¡${text} EL SEMEN TE FASCINA!* 🥵
+*¡@${who.split`@`[0]} EL SEMEN TE FASCINA!* 🥵
   
     `.trim();
     if (m.isGroup) {
@@ -37,7 +40,7 @@ if (!text) throw `*Por favor, menciona el usuario*`;
   }
 };
 handler.help = ['cum'].map((v) => v + ' <@usuario>');
-handler.tags = ['nsfw'];
+handler.tags = ['nsfw', 'react'];
 handler.command = /^(cum)$/i;
 handler.register = true;
 export default handler;

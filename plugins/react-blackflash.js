@@ -2,7 +2,10 @@ import fetch from 'node-fetch';
 
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
     
-if (!text) throw `*Por favor, menciona el usuario*`;
+ let who
+if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
+else who = m.chat
+if (!who) throw `*[❗] Por favor, menciona el usuario*`
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
     
  let pp = "https://telegra.ph/file/b85a02fb77c203fc1fa38.mp4"
@@ -15,7 +18,7 @@ if (!text) throw `*Por favor, menciona el usuario*`;
     const document = doc[Math.floor(Math.random() * doc.length)];
     const str = `
 
-        _${taguser} HA USADO DESTELLO NEGRO EN ${text} 🤜🏻💥🔥_
+        _${taguser} HA USADO DESTELLO NEGRO EN @${who.split`@`[0]} 🤜🏻💥🔥_
  
   
     `.trim();
