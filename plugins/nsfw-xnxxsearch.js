@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 const handler = async (m, {text, usedPrefix, command}) => {
-if (!db.data.chats[m.chat].nsfw && m.isGroup) throw `*los comandos  +18 estan desactivados en este grupo, si es admin y desea activarlos use el comando ${usedPrefix}enable nsfw*`;   
+  if (!db.data.chats[m.chat].nsfw && m.isGroup) throw `*los comandos  +18 estan desactivados en este grupo, si es admin y desea activarlos use el comando ${usedPrefix}enable nsfw*`;
   if (!text) throw `*ejemplo de uso del comando ${usedPrefix + command} Con mi vecina*`;
   try {
     const vids_ = {
@@ -63,4 +63,4 @@ async function xnxxsearch(query) {
       resolve({code: 200, status: true, result: results});
     }).catch((err) => reject({code: 503, status: false, result: err}));
   });
-                }
+}

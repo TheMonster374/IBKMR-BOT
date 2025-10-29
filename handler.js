@@ -45,7 +45,7 @@ export async function handler(chatUpdate) {
     if (!m) {
       return;
     }
-    global.mconn = m 
+    global.mconn = m;
     m.exp = 0;
     m.money = false;
     m.limit = false;
@@ -80,7 +80,7 @@ export async function handler(chatUpdate) {
           if (!isNumber(user.bibitjeruk)) user.bibitjeruk = 0;
           if (!isNumber(user.bibitmangga)) user.bibitmangga = 0;
           if (!('midLanguage' in user)) user.midLanguage = 0;
-            if (!isNumber(user.bibitpisang)) user.bibitpisang = 0;
+          if (!isNumber(user.bibitpisang)) user.bibitpisang = 0;
           if (!isNumber(user.emas)) user.emas = 0;
           if (!isNumber(user.jeruk)) user.jeruk = 0;
           if (!isNumber(user.kayu)) user.kayu = 0;
@@ -171,7 +171,7 @@ export async function handler(chatUpdate) {
         if (!isNumber(user.cupon)) user.cupon = 0;
         if (!isNumber(user.diamond)) user.diamond = 3;
         if (!isNumber(user.dog)) user.dog = 0;
-	if (!isNumber(user.fantasy)) user.fantasy = 0;
+        if (!isNumber(user.fantasy)) user.fantasy = 0;
         if (!isNumber(user.dogexp)) user.dogexp = 0;
         if (!isNumber(user.doglastfeed)) user.doglastfeed = 0;
         if (!isNumber(user.dory)) user.dory = 0;
@@ -202,12 +202,12 @@ export async function handler(chatUpdate) {
         if (!isNumber(user.ganja)) user.ganja = 0;
         if (!isNumber(user.gardenboxs)) user.gardenboxs = 0;
         if (!isNumber(user.gems)) user.gems = 0;
-if (!isNumber(user.fantasy)) user.fantasy = []
-if (!isNumber(user.fantasy_character)) user.fantasy_character = 0
-if (!isNumber(user.fantasy_character2)) user.fantasy_character2 = 0
-if (!isNumber(user.fantasy_character3)) user.fantasy_character3 = 0
-if (!isNumber(user.fantasy_character4)) user.fantasy_character4 = 0
-if (!isNumber(user.fantasy_character5)) user.fantasy_character5 = 0
+        if (!isNumber(user.fantasy)) user.fantasy = [];
+        if (!isNumber(user.fantasy_character)) user.fantasy_character = 0;
+        if (!isNumber(user.fantasy_character2)) user.fantasy_character2 = 0;
+        if (!isNumber(user.fantasy_character3)) user.fantasy_character3 = 0;
+        if (!isNumber(user.fantasy_character4)) user.fantasy_character4 = 0;
+        if (!isNumber(user.fantasy_character5)) user.fantasy_character5 = 0;
         if (!isNumber(user.glass)) user.glass = 0;
         if (!isNumber(user.glimit)) user.glimit = 20;
         if (!isNumber(user.glory)) user.glory = 0;
@@ -395,7 +395,7 @@ if (!isNumber(user.fantasy_character5)) user.fantasy_character5 = 0
         if (!isNumber(user.orca)) user.orca = 0;
         if (!isNumber(user.pancing)) user.pancing = 0;
         if (!isNumber(user.pancingan)) user.pancingan = 1;
-	if (!isNumber(user.pc)) user.pc = 0;
+        if (!isNumber(user.pc)) user.pc = 0;
         if (!isNumber(user.panda)) user.panda = 0;
         if (!isNumber(user.paus)) user.paus = 0;
         if (!isNumber(user.pausbakar)) user.pausbakar = 0;
@@ -497,7 +497,7 @@ if (!isNumber(user.fantasy_character5)) user.fantasy_character5 = 0
         if (!isNumber(user.wolf)) user.wolf = 0;
         if (!isNumber(user.wolfexp)) user.wolfexp = 0;
         if (!isNumber(user.wolflastfeed)) user.wolflastfeed = 0;
-	if (!isNumber(user.gay)) user.gay = 0; //editando
+        if (!isNumber(user.gay)) user.gay = 0; // editando
         if (!isNumber(user.wood)) user.wood = 0;
         if (!isNumber(user.wortel)) user.wortel = 0;
         if (!user.lbars) user.lbars = '[▒▒▒▒▒▒▒▒▒]';
@@ -619,7 +619,7 @@ if (!isNumber(user.fantasy_character5)) user.fantasy_character5 = 0
           gamemines: false,
           ganja: 0,
           gardenboxs: 0,
-	  gay: 0, //editado
+	  gay: 0, // editado
           gems: 0,
           glass: 0,
           gold: 0,
@@ -631,12 +631,12 @@ if (!isNumber(user.fantasy_character5)) user.fantasy_character5 = 0
           gurita: 0,
           harimau: 0,
           haus: 100,
-	fantasy: [],
-fantasy_character: 0,
-fantasy_character2: 0,
-fantasy_character3: 0,
-fantasy_character4: 0,
-fantasy_character5: 0,
+          fantasy: [],
+          fantasy_character: 0,
+          fantasy_character2: 0,
+          fantasy_character3: 0,
+          fantasy_character4: 0,
+          fantasy_character5: 0,
           healt: 100,
           health: 100,
           healtmonster: 100,
@@ -970,7 +970,7 @@ fantasy_character5: 0,
         if (!('antiArab' in chat)) chat.antiArab = false;
         if (!('antiArab2' in chat)) chat.antiArab2 = false;
         if (!('antiporno' in chat)) chat.antiporno = false;
-	if (!('game' in chat)) chat.game = true;
+        if (!('game' in chat)) chat.game = true;
         if (!('modoadmin' in chat)) chat.modoadmin = false;
         if (!('simi' in chat)) chat.simi = false;
         if (!isNumber(chat.expired)) chat.expired = 0;
@@ -998,7 +998,7 @@ fantasy_character5: 0,
 	  antiporno: false,
 	  modoadmin: false,
 	  simi: false,
- 	  game: true, 
+ 	  game: true,
           expired: 0,
         };
       }
@@ -1011,10 +1011,10 @@ fantasy_character5: 0,
         if (!('restrict' in settings)) settings.restrict = false;
         if (!('antiCall' in settings)) settings.antiCall = false;
         if (!('antiPrivate' in settings)) settings.antiPrivate = false;
-	if (!('modejadibot' in settings)) settings.modejadibot = true;
+        if (!('modejadibot' in settings)) settings.modejadibot = true;
         if (!('antispam' in settings)) settings.antispam = false;
-	if (!('audios_bot' in settings)) settings.audios_bot = true;  
-	if (!('modoia' in settings)) settings.modoia = false;      
+        if (!('audios_bot' in settings)) settings.audios_bot = true;
+        if (!('modoia' in settings)) settings.modoia = false;
       } else {
         global.db.data.settings[this.user.jid] = {
           self: false,
@@ -1026,7 +1026,7 @@ fantasy_character5: 0,
 	  modejadibot: true,
           antispam: false,
 	  audios_bot: true,
-	  modoia: false
+	  modoia: false,
         };
       }
     } catch (e) {
@@ -1190,8 +1190,8 @@ fantasy_character5: 0,
 
           if (!['owner-unbanchat.js', 'info-creator.js'].includes(name) && chat && chat?.isBanned && !isROwner) return; // Except this
           if (name != 'owner-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && chat?.isBanned && !isROwner) return; // Except this
-          //if ((name != 'owner-unbanchat.js' || name != 'owner-exec.js' || name != 'owner-exec2.js') && chat?.isBanned && !isROwner) return; // Except this
-		
+          // if ((name != 'owner-unbanchat.js' || name != 'owner-exec.js' || name != 'owner-exec2.js') && chat?.isBanned && !isROwner) return; // Except this
+
           if (m.text && user.banned && !isROwner) {
             if (typeof user.bannedMessageCount === 'undefined') {
               user.bannedMessageCount = 0;
@@ -1199,7 +1199,7 @@ fantasy_character5: 0,
 
             if (user.bannedMessageCount < 3) {
               const messageNumber = user.bannedMessageCount + 1;
-const messageText = `_*< USUARIO SUSPENDIDO />*_\n
+              const messageText = `_*< USUARIO SUSPENDIDO />*_\n
  ▢ *Aviso:* ${messageNumber}/3
  ${user.bannedReason ? `\n▢ *Motivo:* ${user.bannedReason}` : ' ▢ *Motivo:* Sin especificar'}
  *Si consideras que esto es un error y cuentas con pruebas, puedes comunicarte con el propietario(a) del bot para apelar la suspensión.*`.trim();
@@ -1212,7 +1212,7 @@ const messageText = `_*< USUARIO SUSPENDIDO />*_\n
             }
             return;
           }
-		
+
           if (botSpam.antispam && m.text && user && user.lastCommandTime && (Date.now() - user.lastCommandTime) < 5000 && !isROwner) {
             if (user.commandCount === 2) {
               const remainingTime = Math.ceil((user.lastCommandTime + 5000 - Date.now()) / 1000);
@@ -1284,11 +1284,11 @@ const messageText = `_*< USUARIO SUSPENDIDO />*_\n
         }
         if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
           mconn.conn.reply(m.chat, `*_Sus diamantes se han agotado, puede adquirir más con el comando:_* _${usedPrefix}buyall_`, m);
-          continue; 
+          continue;
         }
         if (plugin.level > _user.level) {
           mconn.conn.reply(m.chat, `*[ ℹ️ ] Se require tener el nivel ${plugin.level} para poder utilizar el comando. Tú nivel actual es ${_user.level}, usa el comando ${usedPrefix}lvl para subir tu nivel con XP.*`, m);
-          continue; 
+          continue;
         }
         const extra = {
           match,
@@ -1429,9 +1429,9 @@ const messageText = `_*< USUARIO SUSPENDIDO />*_\n
  * @param {import('@whiskeysockets/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate
  */
 export async function participantsUpdate({id, participants, action}) {
-  const m = mconn
+  const m = mconn;
   if (opts['self']) return;
-  //if (m.conn.isInit) return;
+  // if (m.conn.isInit) return;
   if (global.db.data == null) await loadDatabase();
   const chat = global.db.data.chats[id] || {};
   const botTt = global.db.data.settings[m.conn.user.jid] || {};
@@ -1526,18 +1526,18 @@ export async function callUpdate(callUpdate) {
 }
 
 export async function deleteUpdate(message) {
-let d = new Date(new Date + 3600000)
-let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
- let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-    try {
-        const { fromMe, id, participant } = message
-        if (fromMe) return 
-        let msg = mconn.conn.serializeM(mconn.conn.loadMessage(id))
-	let chat = global.db.data.chats[msg?.chat] || {}
-	if (!chat?.antidelete) return 
-        if (!msg) return 
-	if (!msg?.isGroup) return 
-	const antideleteMessage = `
+  const d = new Date(new Date + 3600000);
+  const date = d.toLocaleDateString('es', {day: 'numeric', month: 'long', year: 'numeric'});
+  const time = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+  try {
+    const {fromMe, id, participant} = message;
+    if (fromMe) return;
+    const msg = mconn.conn.serializeM(mconn.conn.loadMessage(id));
+    const chat = global.db.data.chats[msg?.chat] || {};
+    if (!chat?.antidelete) return;
+    if (!msg) return;
+    if (!msg?.isGroup) return;
+    const antideleteMessage = `
  ╭⚊⚊⚊⚊⚊⚊  𝐀𝐍𝐓𝐈 𝐃𝐄𝐋𝐄𝐓𝐄  ⚊⚊⚊⚊⚊⚊
  ▢ *Usuario:* @${participant.split`@`[0]}
  ▢ *Hora:* ${time}
@@ -1545,11 +1545,11 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
  ▢ *Enviando el mensaje eliminado...*\n
  *Para desactivar la función* _antidelete_*, envia el siguiente comando:* _/disable antidelete_
  ╰⚊⚊⚊⚊⚊⚊ 𝐀𝐍𝐓𝐈 𝐃𝐄𝐋𝐄𝐓𝐄  ⚊⚊⚊⚊⚊⚊`.trim();
-        await mconn.conn.sendMessage(msg.chat, {text: antideleteMessage, mentions: [participant]}, {quoted: msg})
-        mconn.conn.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
-    } catch (e) {
-        console.error(e)
-    }
+    await mconn.conn.sendMessage(msg.chat, {text: antideleteMessage, mentions: [participant]}, {quoted: msg});
+    mconn.conn.copyNForward(msg.chat, msg).catch((e) => console.log(e, msg));
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 global.dfail = (type, m, conn) => {
@@ -1567,31 +1567,30 @@ global.dfail = (type, m, conn) => {
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
   const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {
-'forwardingScore': 200,
-'isForwarded': false,
-externalAdReply: {
-showAdAttribution: false,
-title: `GRUPO DE WHATSAPP`,
-body: `🤍 Unete al grupo OFC`,
-mediaType: 1,
-sourceUrl: 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc',
-thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg'
-}}}}, aa);
+    'forwardingScore': 200,
+    'isForwarded': false,
+    'externalAdReply': {
+      showAdAttribution: false,
+      title: `GRUPO DE WHATSAPP`,
+      body: `🤍 Unete al grupo OFC`,
+      mediaType: 1,
+      sourceUrl: 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc',
+      thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+    }}}}, aa);
   if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
-            
+
 
 const file = global.__filename(import.meta.url, true);
 watchFile(file, async () => {
   unwatchFile(file);
   console.log(chalk.redBright('Update \'handler.js\''));
   if (global.reloadHandler) console.log(await global.reloadHandler());
-  
+
   if (global.conns && global.conns.length > 0 ) {
     const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
     for (const userr of users) {
-      userr.subreloadHandler(false)
+      userr.subreloadHandler(false);
     }
   }
-  
 });

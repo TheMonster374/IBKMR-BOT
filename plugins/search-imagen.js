@@ -12,9 +12,7 @@ handler.command = /^(gimage|image|imagen)$/i;
 export default handler;
 
 
-
-
-/*import {googleImage} from '@bochilteam/scraper';
+/* import {googleImage} from '@bochilteam/scraper';
 const handler = async (m, {conn, text, usedPrefix, command}) => {
   if (!text) throw `[💡] 𝑬𝒋𝒆𝒎𝒑𝒍𝒐 𝒅𝒆 𝒖𝒔𝒐 𝒅𝒆𝒍 𝒄𝒐𝒎𝒂𝒏𝒅𝒐: ${usedPrefix + command} jotchua`;
     const res = await googleImage(text);

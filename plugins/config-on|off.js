@@ -1,5 +1,5 @@
 const handler = async (m, {conn, usedPrefix, command, args, isOwner, isAdmin, isROwner}) => {
-const optionsFull = `
+  const optionsFull = `
 .on (opcion)
 .off (opcion)
 
@@ -193,7 +193,7 @@ const optionsFull = `
         global.dfail('owner', m, conn);
         throw false;
       }
-      bot.audios_bot = isEnable;      
+      bot.audios_bot = isEnable;
       break;
     case 'modoia':
       isAll = true;
@@ -201,8 +201,8 @@ const optionsFull = `
         global.dfail('owner', m, conn);
         throw false;
       }
-      bot.modoia = isEnable;      
-      break;      
+      bot.modoia = isEnable;
+      break;
     case 'nyimak':
       isAll = true;
       if (!isROwner) {
@@ -218,7 +218,7 @@ const optionsFull = `
         throw false;
       }
       bot.autoread2 = isEnable;
-      //global.opts['autoread'] = isEnable;
+      // global.opts['autoread'] = isEnable;
       break;
     case 'pconly':
     case 'privateonly':
@@ -288,20 +288,21 @@ const optionsFull = `
       }
       chat.antiToxic = isEnable;
       break;
-      case 'game': case 'juegos': case 'fun': case 'ruleta':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.game = isEnable          
-break;
+    case 'game': case 'juegos': case 'fun': case 'ruleta':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.game = isEnable;
+      break;
       chat.antiTraba = isEnable;
       break;
     case 'antiarabes':
       if (m.isGroup) {
         if (!(isAdmin || isROwner || isOwner)) {
-          global.dfail('admin', m, conn); 
+          global.dfail('admin', m, conn);
           throw false;
         }
       }
@@ -322,7 +323,7 @@ break;
   }
   conn.sendMessage(m.chat, {text: `_*[⚙] 𝑭𝒖𝒏𝒄𝒊𝒐𝒏𝒆𝒔 𝒅𝒆𝒍 𝒃𝒐𝒕 [⚙]*_\n\n*𝑳𝒂 𝒐𝒑𝒄𝒊𝒐𝒏* _${type}_ *𝑭𝒖𝒆* ${isEnable ? '_𝒂𝒄𝒕𝒊𝒗𝒂𝒅𝒂_' : '_𝒅𝒆𝒔𝒂𝒄𝒕𝒊𝒗𝒂𝒅𝒂_'} *𝒆𝒙𝒊𝒕𝒐𝒔𝒂𝒎𝒆𝒏𝒕𝒆 𝒑𝒂𝒓𝒂 𝒆𝒔𝒕𝒆* ${isAll ? '_𝒃𝒐𝒕._' : isUser ? '' : '_𝒄𝒉𝒂𝒕._'}`}, {quoted: m});
 };
-handler.help = ['on <opcion>', 'off <opcion>']
-handler.tags = ['on|off']
+handler.help = ['on <opcion>', 'off <opcion>'];
+handler.tags = ['on|off'];
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?[01]|(on|off))$/i;
 export default handler;

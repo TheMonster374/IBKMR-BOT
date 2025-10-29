@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
-global.img2 = fs.readFileSync('./storage/img/menus/Menu9.jpg');
+  global.img2 = fs.readFileSync('./storage/img/menus/Menu9.jpg');
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
   try {
     const pp = img2;
@@ -17,7 +17,7 @@ global.img2 = fs.readFileSync('./storage/img/menus/Menu9.jpg');
     const {money, joincount} = global.db.data.users[m.sender];
     const {exp, limit, level, role} = global.db.data.users[m.sender];
     const rtotalreg = Object.values(global.db.data.users).filter((user) => user.registered == true).length;
-    const rtotal = Object.entries(global.db.data.users).length || '0'
+    const rtotal = Object.entries(global.db.data.users).length || '0';
     const more = String.fromCharCode(8206);
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
@@ -88,12 +88,10 @@ global.img2 = fs.readFileSync('./storage/img/menus/Menu9.jpg');
       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
       conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
     }
-      await conn.sendMessage(m.chat, { react: { text: '👻', key: m.key } })
-
-   
+    await conn.sendMessage(m.chat, {react: {text: '👻', key: m.key}});
   } catch (e) {
     conn.reply(m.chat, '*[❌] ocurrio un error inesperado al enviar el menu*', m);
-    throw e
+    throw e;
   }
 };
 handler.command = /^(menufun|MenuFun|MENUFUN)$/i;

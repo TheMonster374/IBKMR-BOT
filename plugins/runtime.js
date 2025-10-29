@@ -2,8 +2,8 @@ import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
   try {
-     let pp = 'https://telegra.ph/file/935629ab669ad9db08726.mp4'  
-     let pp2 = 'https://telegra.ph/file/b99a2893ba8cab095c20d.mp4' /*https://telegra.ph/file/8adf82315f2b226833c27.mp4*/
+    const pp = 'https://telegra.ph/file/935629ab669ad9db08726.mp4';
+    const pp2 = 'https://telegra.ph/file/b99a2893ba8cab095c20d.mp4'; /* https://telegra.ph/file/8adf82315f2b226833c27.mp4*/
     const d = new Date(new Date + 3600000);
     const locale = 'es-ES';
     const week = d.toLocaleDateString(locale, {weekday: 'long'});
@@ -11,9 +11,9 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     const _uptime = process.uptime() * 1000;
     const uptime = clockString(_uptime);
     function pickRandom(list) {
-  return list[Math.floor(Math.random() * list.length)]
-}
-    await conn.sendMessage(m.chat, { react: { text: '⌛', key: m.key } })
+      return list[Math.floor(Math.random() * list.length)];
+    }
+    await conn.sendMessage(m.chat, {react: {text: '⌛', key: m.key}});
     const str = `tiempo activo: ${uptime} 
 
 
@@ -21,18 +21,18 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     if (m.isGroup) {
       // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-    conn.sendMessage(m.chat, { video: { url: [pp, pp2].getRandom() }, gifPlayback: true, caption: str.trim(), mentions: [m.sender] }, { quoted: m })
+      conn.sendMessage(m.chat, {video: {url: [pp, pp2].getRandom()}, gifPlayback: true, caption: str.trim(), mentions: [m.sender]}, {quoted: m});
     } else {
       // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-      conn.sendMessage(m.chat, { video: { url: [pp, pp2].getRandom() }, gifPlayback: true, caption: str.trim(), mentions: [m.sender] }, { quoted: m })
+      conn.sendMessage(m.chat, {video: {url: [pp, pp2].getRandom()}, gifPlayback: true, caption: str.trim(), mentions: [m.sender]}, {quoted: m});
     }
   } catch {
     conn.reply(m.chat, '*Este menu tiene un error interno, por lo cual no fue posible enviarlo.*', m);
   }
 };
-handler.help = ['runtime']
-handler.tags = ['main']
+handler.help = ['runtime'];
+handler.tags = ['main'];
 handler.command = /^(runtime)$/i;
 handler.exp = 50;
 handler.fail = null;

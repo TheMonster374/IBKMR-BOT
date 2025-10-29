@@ -10,7 +10,7 @@ const handler = async (m, {args, usedPrefix, command}) => {
   m.reply(`*[ ⏳ ] se esta enviando el archivo, espera...*\n\n[ ⚠ ] Si no se envia puede ser porque supera el limite de tamaño`);
   conn.sendFile(m.chat, url, filename, null, m);
 };
-handler.help = ['gitclone']
-handler.tags = ['downloader']
+handler.help = ['gitclone'];
+handler.tags = ['downloader'];
 handler.command = /gitclone/i;
 export default handler;

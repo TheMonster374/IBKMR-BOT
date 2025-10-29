@@ -43,7 +43,7 @@ global.APIs = {
   vihangayt: 'https://vihangayt.me',
   erdwpe: 'https://api.erdwpe.com',
   xyroinee: 'https://api.xyroinee.xyz',
-  nekobot: 'https://nekobot.xyz'
+  nekobot: 'https://nekobot.xyz',
 },
 global.APIKeys = {
   'https://api.xteam.xyz': `${keysxteam}`,
@@ -55,7 +55,7 @@ global.APIKeys = {
   'https://api.ibeng.tech/docs': 'tamvan',
   'https://api.itsrose.site': 'Rs-Zeltoria',
   'https://api-xcoders.site': 'Frieren',
-  'https://api.xyroinee.xyz': 'uwgflzFEh6'
+  'https://api.xyroinee.xyz': 'uwgflzFEh6',
 };
 
 /** ************************/

@@ -4,12 +4,12 @@ import yts from 'yt-search';
 import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
 import ytdl from 'ytdl-core';
 import {bestFormat, getUrlDl} from '../lib/y2dl.js';
-import YTDL from "../lib/ytdll.js";
-import fs from "fs";
-let limit1 = 100;
-let limit2 = 400;
-let limit_a1 = 50;
-let limit_a2 = 400;
+import YTDL from '../lib/ytdll.js';
+import fs from 'fs';
+const limit1 = 100;
+const limit2 = 400;
+const limit_a1 = 50;
+const limit_a2 = 400;
 const handler = async (m, {conn, command, args, text, usedPrefix}) => {
   if (!text) throw `*_ingresa el nombre de una cancion_*\n\n*ejemplo:* ${usedPrefix + command} 8 - YSY A - NO NEGOCIO CON MI ALMA (PROD. ONIRIA) `;
   try {
@@ -46,86 +46,92 @@ ${yt_play[0].url}
 
 *_Enviando ${additionalText}, Aguarde Un Momento. . . ．．．_*
 `.trim();
-        conn.sendMessage(m.chat, {image: {url: yt_play[0].thumbnail}, caption: texto1}, {quoted: m});
+    conn.sendMessage(m.chat, {image: {url: yt_play[0].thumbnail}, caption: texto1}, {quoted: m});
     if (command == 'play1.1') {
-    try {    
-    const q = '128kbps';
-    const v = yt_play[0].url;
-    const yt = await youtubedl(v).catch(async (_) => await youtubedlv2(v));
-    const dl_url = await yt.audio[q].download();
-    const ttl = await yt.title;
-    const size_Api = await yt?.size;
-    const sizeApi = size_Api?.replace('MB', '')?.replace('GB', '')?.replace('KB', '')   
-    const sex = await getBuffer(dl_url)
-    const fileSizeInBytes = sex.byteLength;
-    const fileSizeInKB = fileSizeInBytes / 1024;
-    const fileSizeInMB = fileSizeInKB / 1024;
-    const size = fileSizeInMB.toFixed(2);    
-    if (size >= limit_a2) {  
-    await conn.sendMessage(m.chat, {text: `*descargue su audio en ${dl_url}*`}, {quoted: m});
-    return;    
-    }     
-    if (size >= limit_a1 && size <= limit_a2) {  
-    await conn.sendMessage(m.chat, {document: sex, mimetype: 'audio/mpeg', fileName: ttl + `.mp3`}, {quoted: m});   
-    return;
-    } else {
-    await conn.sendMessage(m.chat, {audio: sex, mimetype: 'audio/mpeg', fileName: ttl + `.mp3`}, {quoted: m});   
-    return    
-    }} catch {
-    try {      
-    let info = await ytdl.getInfo(yt_play[0].videoId);
-    let format = ytdl.chooseFormat(info.formats, { quality: 'highestaudio' });
-    let buff = ytdl.downloadFromInfo(info, { format: format });
-    let bufs = []
-        buff.on('data', chunk => { bufs.push(chunk) })
-        buff.on('end', async () => {
-    let buff = Buffer.concat(bufs)
-    conn.sendMessage(m.chat, {audio: buff, fileName: yt_play[0].title + '.mp3', mimetype: 'audio/mpeg'}, {quoted: m});
-    })} catch {
-    await YTDL.mp3(yt_play[0].url).then(async (s) => {
-    await conn.sendMessage(m.chat, {audio: fs.readFileSync(s.path), mimetype: "audio/mpeg", fileName: `${s.meta.title || "-"}.mp3`,}, {quoted: m});
-    await fs.unlinkSync(s.path)});
+      try {
+        const q = '128kbps';
+        const v = yt_play[0].url;
+        const yt = await youtubedl(v).catch(async (_) => await youtubedlv2(v));
+        const dl_url = await yt.audio[q].download();
+        const ttl = await yt.title;
+        const size_Api = await yt?.size;
+        const sizeApi = size_Api?.replace('MB', '')?.replace('GB', '')?.replace('KB', '');
+        const sex = await getBuffer(dl_url);
+        const fileSizeInBytes = sex.byteLength;
+        const fileSizeInKB = fileSizeInBytes / 1024;
+        const fileSizeInMB = fileSizeInKB / 1024;
+        const size = fileSizeInMB.toFixed(2);
+        if (size >= limit_a2) {
+          await conn.sendMessage(m.chat, {text: `*descargue su audio en ${dl_url}*`}, {quoted: m});
+          return;
+        }
+        if (size >= limit_a1 && size <= limit_a2) {
+          await conn.sendMessage(m.chat, {document: sex, mimetype: 'audio/mpeg', fileName: ttl + `.mp3`}, {quoted: m});
+          return;
+        } else {
+          await conn.sendMessage(m.chat, {audio: sex, mimetype: 'audio/mpeg', fileName: ttl + `.mp3`}, {quoted: m});
+          return;
+        }
+      } catch {
+        try {
+          const info = await ytdl.getInfo(yt_play[0].videoId);
+          const format = ytdl.chooseFormat(info.formats, {quality: 'highestaudio'});
+          const buff = ytdl.downloadFromInfo(info, {format: format});
+          const bufs = [];
+          buff.on('data', (chunk) => {
+            bufs.push(chunk);
+          });
+          buff.on('end', async () => {
+            const buff = Buffer.concat(bufs);
+            conn.sendMessage(m.chat, {audio: buff, fileName: yt_play[0].title + '.mp3', mimetype: 'audio/mpeg'}, {quoted: m});
+          });
+        } catch {
+          await YTDL.mp3(yt_play[0].url).then(async (s) => {
+            await conn.sendMessage(m.chat, {audio: fs.readFileSync(s.path), mimetype: 'audio/mpeg', fileName: `${s.meta.title || '-'}.mp3`}, {quoted: m});
+            await fs.unlinkSync(s.path);
+          });
+        }
+      }
     }
-  }
-}
     if (command == 'play2') {
-    try {  
-    const qu = '360';
-    const q = qu + 'p';
-    const v = yt_play[0].url;
-    const yt = await youtubedl(v).catch(async (_) => await youtubedlv2(v));
-    const dl_url = await yt.video[q].download();
-    const ttl = await yt.title;
-    const size_Api = await yt?.size;
-    const sizeApi = size_Api?.replace('MB', '')?.replace('GB', '')?.replace('KB', '')   
-    const sex = await getBuffer(dl_url)
-    const fileSizeInBytes = sex.byteLength;
-    const fileSizeInKB = fileSizeInBytes / 1024;
-    const fileSizeInMB = fileSizeInKB / 1024;
-    const size = fileSizeInMB.toFixed(2);    
-    if (size >= limit2) {  
-    await conn.sendMessage(m.chat, {text: `*descargue su audio en ${dl_url}*`}, {quoted: m});
-    return;    
-    }     
-    if (size >= limit1 && size <= limit2) {  
-    await conn.sendMessage(m.chat, {document: sex, mimetype: 'video/mp4', fileName: ttl + `.mp4`}, {quoted: m});   
-    return;
-    } else {
-    await conn.sendMessage(m.chat, {video: sex, mimetype: 'video/mp4', fileName: ttl + `.mp4`}, {quoted: m});   
-    return;    
-    }} catch {
-    const formats = await bestFormat(yt_play[0].url, 'video');
-    const buff = await getBuffer(formats.url);
-    const ttl_1 = `${yt_play[0].title ? yt_play[0].title : 'Tu_video_descargado'}`;
-    const fileSizeInBytes = buff.byteLength;
-    const fileSizeInKB = fileSizeInBytes / 1024;
-    const fileSizeInMB = fileSizeInKB / 1024;
-    const roundedFileSizeInMB = fileSizeInMB.toFixed(2);
-    await conn.sendMessage(m.chat, {video: buff, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
-    }      
-  }
-} catch (error) {
-    console.log(error)
+      try {
+        const qu = '360';
+        const q = qu + 'p';
+        const v = yt_play[0].url;
+        const yt = await youtubedl(v).catch(async (_) => await youtubedlv2(v));
+        const dl_url = await yt.video[q].download();
+        const ttl = await yt.title;
+        const size_Api = await yt?.size;
+        const sizeApi = size_Api?.replace('MB', '')?.replace('GB', '')?.replace('KB', '');
+        const sex = await getBuffer(dl_url);
+        const fileSizeInBytes = sex.byteLength;
+        const fileSizeInKB = fileSizeInBytes / 1024;
+        const fileSizeInMB = fileSizeInKB / 1024;
+        const size = fileSizeInMB.toFixed(2);
+        if (size >= limit2) {
+          await conn.sendMessage(m.chat, {text: `*descargue su audio en ${dl_url}*`}, {quoted: m});
+          return;
+        }
+        if (size >= limit1 && size <= limit2) {
+          await conn.sendMessage(m.chat, {document: sex, mimetype: 'video/mp4', fileName: ttl + `.mp4`}, {quoted: m});
+          return;
+        } else {
+          await conn.sendMessage(m.chat, {video: sex, mimetype: 'video/mp4', fileName: ttl + `.mp4`}, {quoted: m});
+          return;
+        }
+      } catch {
+        const formats = await bestFormat(yt_play[0].url, 'video');
+        const buff = await getBuffer(formats.url);
+        const ttl_1 = `${yt_play[0].title ? yt_play[0].title : 'Tu_video_descargado'}`;
+        const fileSizeInBytes = buff.byteLength;
+        const fileSizeInKB = fileSizeInBytes / 1024;
+        const fileSizeInMB = fileSizeInKB / 1024;
+        const roundedFileSizeInMB = fileSizeInMB.toFixed(2);
+        await conn.sendMessage(m.chat, {video: buff, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
+      }
+    }
+  } catch (error) {
+    console.log(error);
     throw '[❌] Ocurrio un error inesperado';
   }
 };
@@ -174,6 +180,6 @@ function bytesToSize(bytes) {
 
 const getBuffer = async (url, options) => {
     options ? options : {};
-    const res = await axios({method: 'get', url, headers: {'DNT': 1, 'Upgrade-Insecure-Request': 1,}, ...options, responseType: 'arraybuffer'});
+    const res = await axios({method: 'get', url, headers: {'DNT': 1, 'Upgrade-Insecure-Request': 1}, ...options, responseType: 'arraybuffer'});
     return res.data;
 };

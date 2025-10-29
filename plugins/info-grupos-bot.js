@@ -38,7 +38,7 @@ https://whatsapp.com/channel/0029VaPhM3S3wtbBXOzf6t0j
     'headerType': 6};
   conn.sendMessage(m.chat, buttonMessage, {quoted: m});
 };
-handler.help = ['grupos']
+handler.help = ['grupos'];
 handler.tags = ['main'];
 handler.command = ['linkgc', 'grupos', 'gruposjt'];
 export default handler;

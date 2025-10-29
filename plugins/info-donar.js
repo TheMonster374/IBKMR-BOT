@@ -1,11 +1,11 @@
-//NO EDITAR, PUEDE GENERAR BUGS EN EL BOT
+// NO EDITAR, PUEDE GENERAR BUGS EN EL BOT
 
 import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
-global.img7 = fs.readFileSync ('./Donar.mp4');
+  global.img7 = fs.readFileSync('./Donar.mp4');
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
   try {
-    const pp = img7
+    const pp = img7;
     const img = './Donar.mp4';
     const d = new Date(new Date + 3600000);
     const locale = 'es-ES';
@@ -19,7 +19,7 @@ global.img7 = fs.readFileSync ('./Donar.mp4');
     const {money, joincount} = global.db.data.users[m.sender];
     const {exp, limit, level, role} = global.db.data.users[m.sender];
     const rtotalreg = Object.values(global.db.data.users).filter((user) => user.registered == true).length;
-    const rtotal = Object.entries(global.db.data.users).length || '0'
+    const rtotal = Object.entries(global.db.data.users).length || '0';
     const more = String.fromCharCode(8206);
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
@@ -48,21 +48,21 @@ https://paypal.me/monster373505?country.x=CO&locale.x=es_XC
  `.trim();
     if (m.isGroup) {
       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-      /*conn.sendMessage(m.chat, {video: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: m});
+      /* conn.sendMessage(m.chat, {video: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: m});
     } */
-      conn.sendMessage(m.chat, { video: pp, gifPlayback: true, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
-        }else {
+      conn.sendMessage(m.chat, {video: pp, gifPlayback: true, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
+    } else {
       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-     /* conn.sendMessage(m.chat, {video: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
-    */ conn.sendMessage(m.chat, { video: pp, gifPlayback: true, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
+      /* conn.sendMessage(m.chat, {video: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
+    */ conn.sendMessage(m.chat, {video: pp, gifPlayback: true, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
     }
   } catch {
     conn.reply(m.chat, '*[❌] ocurrio un error inesperado al enviar el menu*', m);
   }
 };
 handler.command = /^(donar)$/i;
-handler.tags = ['main']
-handler.help = ['donar']
+handler.tags = ['main'];
+handler.help = ['donar'];
 handler.exp = 50;
 handler.fail = null;
 export default handler;

@@ -1,5 +1,5 @@
 const handler = async (m, {conn, usedPrefix, command, args, isOwner, isAdmin, isROwner}) => {
-const optionsFull = `
+  const optionsFull = `
 *⚙️ CONFIGURACION DEL CHAT*
 
 _*Elige la opción según tus preferencias*_
@@ -76,31 +76,25 @@ _*Elige la opción según tus preferencias*_
       }
       chat.detect2 = isEnable;
       break;
-            case 'stickers':
+    case 'stickers':
 
       if (!m.isGroup) {
-
         if (!isOwner) {
-
           global.dfail('group', m, conn);
 
           throw false;
-
         }
-
       } else if (!isAdmin) {
-
         global.dfail('admin', m, conn);
 
         throw false;
-
       }
 
       chat.stickers = isEnable;
 
       break;
 
-  
+
     case 'simsimi':
       if (m.isGroup) {
         if (!(isAdmin || isROwner || isOwner)) {
@@ -110,25 +104,21 @@ _*Elige la opción según tus preferencias*_
       }
       chat.simi = isEnable;
       break;
-           case 'audios':
+    case 'audios':
 
       if (m.isGroup) {
-
         if (!(isAdmin || isOwner)) {
-
           global.dfail('admin', m, conn);
 
           throw false;
-
         }
-
       }
 
       chat.audios = isEnable;
 
       break;
 
-  
+
     case 'delete':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -138,18 +128,14 @@ _*Elige la opción según tus preferencias*_
       }
       chat.delete = isEnable;
       break;
-case 'chatbot':
+    case 'chatbot':
 
       if (m.isGroup) {
-
         if (!(isAdmin || isOwner)) {
-
           global.dfail('admin', m, conn);
 
           throw false;
-
         }
-
       }
 
       chat.chatbot = isEnable;
@@ -181,8 +167,8 @@ case 'chatbot':
       }
       chat.antiLink = isEnable;
       break;
-         
-          
+
+
     case 'antilink2':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -251,7 +237,7 @@ case 'chatbot':
         global.dfail('owner', m, conn);
         throw false;
       }
-      bot.audios_bot = isEnable;      
+      bot.audios_bot = isEnable;
       break;
     case 'modoia':
       isAll = true;
@@ -259,8 +245,8 @@ case 'chatbot':
         global.dfail('owner', m, conn);
         throw false;
       }
-      bot.modoia = isEnable;      
-      break;      
+      bot.modoia = isEnable;
+      break;
     case 'nyimak':
       isAll = true;
       if (!isROwner) {
@@ -276,7 +262,7 @@ case 'chatbot':
         throw false;
       }
       bot.autoread2 = isEnable;
-      //global.opts['autoread'] = isEnable;
+      // global.opts['autoread'] = isEnable;
       break;
     case 'pconly':
     case 'privateonly':
@@ -346,20 +332,21 @@ case 'chatbot':
       }
       chat.antiToxic = isEnable;
       break;
-      case 'game': case 'juegos': case 'fun': case 'ruleta':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.game = isEnable          
-break;
+    case 'game': case 'juegos': case 'fun': case 'ruleta':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.game = isEnable;
+      break;
       chat.antiTraba = isEnable;
       break;
     case 'antiarabes':
       if (m.isGroup) {
         if (!(isAdmin || isROwner || isOwner)) {
-          global.dfail('admin', m, conn); 
+          global.dfail('admin', m, conn);
           throw false;
         }
       }
@@ -380,7 +367,7 @@ break;
   }
   conn.sendMessage(m.chat, {text: `*⚙️ La opcion* _${type}_ *fue* ${isEnable ? ' *_habilitada_*' : ' *_deshabilitada_*'} *exitosamente* ${isAll ? '*_bot_*' : isUser ? '' : '*_chat_*'}`}, {quoted: m});
 };
-handler.help = ['ᴏɴ <opcion>', 'ᴏꜰꜰ <opcion>']
-handler.tags = ['on|off']
+handler.help = ['ᴏɴ <opcion>', 'ᴏꜰꜰ <opcion>'];
+handler.tags = ['on|off'];
 handler.command = /^((en|dis)able2|(tru|fals)e2|(turn)?[01]|(on2|off2))$/i;
 export default handler;

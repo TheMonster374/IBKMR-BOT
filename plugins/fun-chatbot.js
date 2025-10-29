@@ -1,5 +1,5 @@
-let handler = async (m, { conn, command, text }) => {
- let chatbot = `
+const handler = async (m, {conn, command, text}) => {
+  const chatbot = `
 ┏━⊜「 *🤖 𝘾𝙃𝘼𝙏𝘽𝙊𝙏*」
 ┃
 ┃ 🗣️ Nuevo/Nueva
@@ -45,11 +45,12 @@ Recuerda que el chatbot debe estar activado, usa *.on2 chatbot* para activarlo
 
 > ${wm} ${author}
 `.trim();
-m.reply(chatbot, null, { mentions: conn.parseMention(chatbot) })}
+  m.reply(chatbot, null, {mentions: conn.parseMention(chatbot)});
+};
 
-handler.help = ['chatbot']
-handler.tags = ['fun']
-handler.command =/^(chatbot|Chatbot)/i
-handler.fail = null
-handler.register = true
-export default handler
+handler.help = ['chatbot'];
+handler.tags = ['fun'];
+handler.command =/^(chatbot|Chatbot)/i;
+handler.fail = null;
+handler.register = true;
+export default handler;

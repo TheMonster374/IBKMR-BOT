@@ -1,15 +1,15 @@
-import db from '../lib/database.js'
+import db from '../lib/database.js';
 
-let handler = async (m, { conn, text, isROwner, isOwner }) => {
+const handler = async (m, {conn, text, isROwner, isOwner}) => {
   if (text) {
-    global.db.data.chats[m.chat].sBye = text
-    m.reply('✅ *_Se estableció el mensaje de despedida._*')
-  } else throw `⚠️ Ingrese el mensaje\n@user (mención)`
-}
-handler.help = ['setbye *<texto>*']
-handler.tags = ['grupo']
-handler.command = ['setbye'] 
-handler.admin = true
-handler.owner = false
+    global.db.data.chats[m.chat].sBye = text;
+    m.reply('✅ *_Se estableció el mensaje de despedida._*');
+  } else throw `⚠️ Ingrese el mensaje\n@user (mención)`;
+};
+handler.help = ['setbye *<texto>*'];
+handler.tags = ['grupo'];
+handler.command = ['setbye'];
+handler.admin = true;
+handler.owner = false;
 
-export default handler
+export default handler;

@@ -16,11 +16,11 @@ const handler = async (m, {isPrems, conn}) => {
   const recompensas = {
     exp: premium ? exppremium : exp,
     money: premium ? moneypremium : money,
-     };
+  };
 
   const time = user.lastclaim + 7200000; // 2 Horas 7200000
   if (new Date - user.lastclaim < 7200000) return await conn.reply(m.chat, `𝙔𝘼 𝙍𝙀𝘾𝙇𝘼𝙈𝘼𝙎𝙏𝙀 𝙏𝙐 𝙍𝙀𝙂𝘼𝙇𝙊 🎁\n𝙑𝙐𝙀𝙇𝙑𝙀 𝙀𝙉 *${msToTime(time - new Date())}* 𝙋𝘼𝙍𝘼 𝙑𝙊𝙇𝙑𝙀𝙍 𝘼 𝙍𝙀𝘾𝙇𝘼𝙈𝘼𝙍`, fkontak, m);
-   let texto = '';
+  let texto = '';
   for (const reward of Object.keys(recompensas)) {
     if (!(reward in user)) continue;
     user[reward] += recompensas[reward];
@@ -30,7 +30,7 @@ const handler = async (m, {isPrems, conn}) => {
 ┃ ✨ 𝙊𝘽𝙏𝙄𝙀𝙉𝙀𝙎 𝙐𝙉 𝙍𝙀𝙂𝘼𝙇𝙊!!
 ┃ *${premium ? '🎟️ Recompensa Premium' : '🆓 Recompensa Gratis'}*
 ┃ ${texto}
-╰━━🎁━🎁━🎁━━⬣\n\n`
+╰━━🎁━🎁━🎁━━⬣\n\n`;
   const img = './Menu.png';
   await conn.sendFile(m.chat, img, 'mystic.jpg', text, fkontak);
   user.lastclaim = new Date * 1;

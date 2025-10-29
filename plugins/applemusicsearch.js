@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const handler = async (m, { conn, text }) => {
+const handler = async (m, {conn, text}) => {
   if (!text) {
     throw '*_ingresa el nombre de la cancion que quieres buscar_*\n\n*ejemplo:* .applemusicsearch 8 - YSY A - NO NEGOCIO CON MI ALMA (PROD. ONIRIA)';
   }
@@ -25,14 +25,13 @@ const handler = async (m, { conn, text }) => {
 *Precio:* ${json.result.price}\n
 *Duración:* ${json.result.length}\n
 *Género:* ${json.result.genre}\n
-*Enlace:* ${json.result.url}`
+*Enlace:* ${json.result.url}`;
 
     if (json.result.thumbnail) {
       await conn.sendFile(m.chat, json.result.thumbnail, 'thumbnail.jpg', songInfo, m);
     } else {
       m.reply(songInfo);
     }
-
   } catch (error) {
     console.error(error);
     throw `

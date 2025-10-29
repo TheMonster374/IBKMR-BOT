@@ -5,9 +5,7 @@ import fetch from 'node-fetch';
 const {getBinaryNodeChild, getBinaryNodeChildren} = (await import('@whiskeysockets/baileys')).default;
 
 const handler = async (m, {conn, text, participants, args}) => {
-
   try {
-
     const _participants = participants.map((user) => user.id);
 
     const users = (await Promise.all(
@@ -31,7 +29,6 @@ const handler = async (m, {conn, text, participants, args}) => {
     const participant = getBinaryNodeChildren(add, 'participant');
 
     for (const user of participant.filter((item) => item.attrs.error == 403)) {
-
       const jid = user.attrs.jid;
 
       const content = getBinaryNodeChild(user, 'add_request');
@@ -51,15 +48,10 @@ const handler = async (m, {conn, text, participants, args}) => {
       const groupInvite = generateWAMessageFromContent(m.chat, proto.Message.fromObject({groupInviteMessage: {groupJid: m.chat, inviteCode: invite_code, inviteExpiration: invite_code_exp, groupName: await conn.getName(m.chat), caption: captionn, jpegThumbnail: jpegThumbnail}}), {userJid: jid});
 
       await conn.relayMessage(jid, groupInvite.message, {messageId: groupInvite.key.id});
-
     }
-
   } catch {
-
     throw '*no fue posible añadir el  numero que ingreso, esto puede ocurrir porque el numero este incorrecto, la persona se haya salido recientemente del grupo o la persona haya configurado su privacidad de grupos, te aconsejamos enviarle la invitacion manualmente𝚃!!*';
-
   }
-
 };
 
 handler.help = ['add', '+'].map((v) => v + ' número');

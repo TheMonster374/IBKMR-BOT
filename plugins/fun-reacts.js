@@ -1,5 +1,5 @@
-let handler = async (m, { conn, command, text }) => {
- let chatbot = `
+const handler = async (m, {conn, command, text}) => {
+  const chatbot = `
 ┏━⊜「 *🥸 REACCIONES*」
 ┃
 ┃ 🌠​ bite <@usuario>
@@ -55,11 +55,12 @@ Recuerda usar el prefijo oara utilizar las reacciones
 
 > ${wm} ${author}
 `.trim();
-m.reply(chatbot, null, { mentions: conn.parseMention(chatbot) })}
+  m.reply(chatbot, null, {mentions: conn.parseMention(chatbot)});
+};
 
-handler.help = ['reacts']
-handler.tags = ['fun']
-handler.command =/^(Reacts|reacts)/i
-handler.fail = null
-handler.register = true
-export default handler
+handler.help = ['reacts'];
+handler.tags = ['fun'];
+handler.command =/^(Reacts|reacts)/i;
+handler.fail = null;
+handler.register = true;
+export default handler;

@@ -30,8 +30,8 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
     }
   }
 };
-handler.help = ['mediafire']
-handler.tags = ['downloader']
+handler.help = ['mediafire'];
+handler.tags = ['downloader'];
 handler.command = /^(mediafire|mediafiredl|dlmediafire)$/i;
 export default handler;
 
