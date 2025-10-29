@@ -85,6 +85,12 @@ loadDatabase();
 
 /* Creditos a Otosaka (https://wa.me/51993966345) */
 
+// Ensure db directory exists
+const dbDir = path.join(__dirname, 'db');
+if (!existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, {recursive: true});
+}
+
 global.chatgpt = new Low(new JSONFile(path.join(__dirname, '/db/chatgpt.json')));
 global.loadChatgptDB = async function loadChatgptDB() {
   if (global.chatgpt.READ) {

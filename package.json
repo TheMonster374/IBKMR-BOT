@@ -9,12 +9,12 @@
     "src": "src",
     "plugins": "plugins"
   },
-    "scripts": {
+  "scripts": {
     "start": "node index.js",
     "qr": "node index.js qr",
     "code": "node index.js code",
     "test": "node test.js",
-    "test2": "nodemon index.js", 
+    "test2": "nodemon index.js",
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
@@ -26,14 +26,9 @@
     "type": "git",
     "url": "git+https://github.com/TheMonster374/INABAKUMORI-Bot.git"
   },
-    
-    
-    
   "bugs": {
     "url": "https://github.com/TheMonster374/INABAKUMORI-Bot/issues"
   },
-
-
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -54,11 +49,12 @@
     "chalk": "^5.0.0",
     "cheerio": "^1.0.0-rc.10",
     "colors": "1.4.0",
+    "didyoumean": "^1.2.2",
     "express": "^4.17.3",
     "fb-downloader-scrapper": "^1.0.1",
     "file-type": "^17.1.1",
-    "fluid-spotify.js": "1.0.2",
     "fluent-ffmpeg": "^2.1.2",
+    "fluid-spotify.js": "1.0.2",
     "formdata-node": "^4.3.2",
     "fs": "^0.0.1-security",
     "google-it": "^1.6.3",
@@ -75,9 +71,8 @@
     "megajs": "^1.1.3",
     "moment-timezone": "^0.5.34",
     "mongoose": "^6.3.3",
+    "node-cache": "^5.1.2",
     "node-fetch": "^3.2.0",
-    "didyoumean":"^1.2.2",
-    "similarity":"^1.2.1",
     "node-gtts": "^2.0.2",
     "node-id3": "^0.2.6",
     "node-webpmux": "^3.1.1",
@@ -89,8 +84,9 @@
     "qrcode": "^1.5.0",
     "qrcode-terminal": "^0.12.0",
     "readline": "^1.3.0",
-    "socket.io": "^4.4.1",
     "sanzy-spotifydl": "*",
+    "similarity": "^1.2.1",
+    "socket.io": "^4.4.1",
     "syntax-error": "^1.4.0",
     "terminal-image": "^2.0.0",
     "url-regex-safe": "^3.0.0",
