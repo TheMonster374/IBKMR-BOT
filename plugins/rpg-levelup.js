@@ -5,7 +5,7 @@ import {levelup} from '../lib/canvas.js';
 import PhoneNumber from 'awesome-phonenumber';
 import {promises} from 'fs';
 import {join} from 'path';
-const img = 'https://telegra.ph/file/8042958aa9b57a309c12e.jpg';
+const img = 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg';
 const img2 = './src/Channel.jpg';
 const handler = async (m, {conn, usedPrefix, command, args, usedPrefix: _p, __dirname, isOwner, text, isAdmin, isROwner}) => {
   const {levelling} = '../lib/levelling.js';
