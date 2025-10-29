@@ -4,8 +4,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   if (!text) throw `*Por favor, escribe un número*`;
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
 
-  const pp = 'https://telegra.ph/file/9c0fbc6b219e40cc3bd42.jpg';
-  const pp2 = 'https://telegra.ph/file/5752996decc6b4301aec9.jpg';
+  const pp = 'https://i.pinimg.com/originals/9e/b5/37/9eb537c835d143e26250b.jpg';
+  const pp2 = 'https://i.pinimg.com/originals/23/aa/da/23aadaec3f564f1f481bf.jpg';
 
   try {
     const locale = 'es-ES';
