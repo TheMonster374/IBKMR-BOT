@@ -37,7 +37,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
       body: `🤍 Unete al canal OFC`,
 
-      thumbnailUrl: 'https://i.imgur.com/DLX1BxG.png',
+      thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
 
 
       sourceUrl: 'https://whatsapp.com/channel/0029VabyyaKGehEIyunTGo0t',
@@ -58,7 +58,7 @@ title: `CANAL DE WHATSAPP`,
 body: `🤍 Unete al canal OFC`,
 mediaType: 1,
 sourceUrl: 'https://whatsapp.com/channel/0029VabyyaKGehEIyunTGo0t',
-thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg'
+thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif'
 }}}, { quoted: m })
 */
   try {
@@ -148,7 +148,7 @@ mediaType: 1,
 
 sourceUrl: 'https://whatsapp.com/channel/0029VabyyaKGehEIyunTGo0t',
 
-thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg'
+thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif'
 
 }}}, { quoted: m })*/
 
@@ -160,12 +160,12 @@ thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg'
     await conn.sendMessage(m.chat, menu, {quoted: fkontak2});
 
 
-    const pp = await conn.profilePictureUrl(conn.user.jid).catch((_) => 'https://telegra.ph/file/24fa902ead26340f3df2c.png');
+    const pp = await conn.profilePictureUrl(conn.user.jid).catch((_) => 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg');
 
 
-    const img = await (await fetch('https://telegra.ph/file/1e79adfb814a15ff6d473.jpg')).buffer();
+    const img = await (await fetch('https://i.pinimg.com/originals/8f/3c/a5/8f3ca5a8841f26959aa69.jpg')).buffer();
 
-    // 'https://telegra.ph/file/1e79adfb814a15ff6d473.jpg'
+    // 'https://i.pinimg.com/originals/8f/3c/a5/8f3ca5a8841f26959aa69.jpg'
 
 
     /*

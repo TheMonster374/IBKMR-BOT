@@ -166,8 +166,8 @@ const handler = async (m, {conn, usedPrefix: _p, __dirname}) => {
     };
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name]);
 
-    const pp = 'https://telegra.ph/file/539d69f4262a13021ae3e.mp4';
-    const pp2 = 'https://telegra.ph/file/539d69f4262a13021ae3e.mp4';
+    const pp = 'https://i.pinimg.com/originals/53/9d/69/539d69f4262a13021ae3e.mp4';
+    const pp2 = 'https://i.pinimg.com/originals/b4/f7/a6/b4f7a68e142e03ac84221.mp4';
     conn.sendMessage(m.chat, {video: {url: [pp, pp2].getRandom()}, gifPlayback: true, caption: text.trim(), mentions: [m.sender]}, {contextInfo: {
       'forwardingScore': 200,
       'isForwarded': false,
@@ -177,7 +177,7 @@ const handler = async (m, {conn, usedPrefix: _p, __dirname}) => {
         body: `🤍 Unete al canal OFC`,
         mediaType: 1,
         sourceUrl: 'https://whatsapp.com/channel/0029VabyyaKGehEIyunTGo0t',
-        thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+        thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
       }}}, {quoted: m});
 
     await conn.sendMessage(m.chat, {react: {text: '🤍', key: m.key}});

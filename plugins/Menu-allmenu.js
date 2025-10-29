@@ -163,8 +163,8 @@ const handler = async (m, {conn, usedPrefix: _p, __dirname}) => {
     };
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name]);
 
-    const pp = 'https://telegra.ph/file/345ddd00b2854bdd4ba63.mp4';
-    const pp2 = 'https://telegra.ph/file/345ddd00b2854bdd4ba63.mp4';
+    const pp = 'https://i.pinimg.com/originals/b4/f7/a6/b4f7a68e142e03ac84221.mp4';
+    const pp2 = 'https://i.pinimg.com/originals/34/5d/dd/345ddd00b2854bdd4ba63.mp4';
     conn.sendMessage(m.chat, {video: {url: [pp, pp2].getRandom()}, gifPlayback: true, caption: text.trim(), mentions: [m.sender]}, {quoted: m});
   } catch (e) {
     conn.reply(m.chat, '[❌] ERROR \n\n El menu tiene un error', m);

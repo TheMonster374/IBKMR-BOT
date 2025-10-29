@@ -29,7 +29,7 @@ Puedes comprar 💎 diamantes usando los comandos
       body: `🤍 Unete al grupo OFC`,
       mediaType: 1,
       sourceUrl: 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc',
-      thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+      thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
     }}}, {quoted: m});
 };
 handler.help = ['bal'];

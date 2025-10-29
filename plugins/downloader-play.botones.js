@@ -61,7 +61,7 @@ const handler = async (m, {conn, command, args, text, usedPrefix}) => {
 
   /* conn.sendFile(m.chat, vid.thumbnail, '', play, m)
 
-let thumbnailBuffer = await axios.get("https://telegra.ph/file/8f3ca5a8841f26959aa69.jpg", { responseType: 'arraybuffer' })
+let thumbnailBuffer = await axios.get("https://i.pinimg.com/originals/8f/3c/a5/8f3ca5a8841f26959aa69.jpg", { responseType: 'arraybuffer' })
 let buffer = await getBuffer(dl_url)
 let bufferSize = buffer.byteLength
 let contextInfo = {
@@ -89,7 +89,7 @@ thumbnail: Buffer.from(thumbnailBuffer.data),
 
   await conn.sendFile(m.chat, vid.thumbnail, '', play, m);
 
-  const thumbnailBuffer = await axios.get('https://telegra.ph/file/8f3ca5a8841f26959aa69.jpg', {responseType: 'arraybuffer'});
+  const thumbnailBuffer = await axios.get('https://i.pinimg.com/originals/8f/3c/a5/8f3ca5a8841f26959aa69.jpg', {responseType: 'arraybuffer'});
   const buffer = await getBuffer(dl_url);
   const bufferSize = buffer.byteLength;
   const contextInfo = {
@@ -158,7 +158,7 @@ thumbnail: Buffer.from(thumbnailBuffer.data),
           externalAdReply: {
             title: `🤍 Unete al grupo OFC`,
             body: user.name,
-            thumbnailUrl: 'https://imgur.com/o9NvkcL.jpeg',
+            thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
             sourceUrl: 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc',
             mediaType: 1,
             showAdAttribution: true,
@@ -171,7 +171,7 @@ thumbnail: Buffer.from(thumbnailBuffer.data),
         externalAdReply: {
           title: `🤍 Unete al grupo OFC`,
           body: user.name,
-          thumbnailUrl: 'https://imgur.com/o9NvkcL.jpeg',
+          thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
           sourceUrl: 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc',
           mediaType: 1,
           showAdAttribution: true,
