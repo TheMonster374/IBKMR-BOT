@@ -2,7 +2,7 @@ import {watchFile, unwatchFile} from 'fs';
 import chalk from 'chalk';
 import {fileURLToPath} from 'url';
 import fs from 'fs';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import fetch from 'node-fetch';
 import axios from 'axios';
 import moment from 'moment-timezone';
@@ -43,7 +43,7 @@ global.APIs = {
   vihangayt: 'https://vihangayt.me',
   erdwpe: 'https://api.erdwpe.com',
   xyroinee: 'https://api.xyroinee.xyz',
-  nekobot: 'https://nekobot.xyz'
+  nekobot: 'https://nekobot.xyz',
 },
 global.APIKeys = {
   'https://api.xteam.xyz': `${keysxteam}`,
@@ -55,7 +55,7 @@ global.APIKeys = {
   'https://api.ibeng.tech/docs': 'tamvan',
   'https://api.itsrose.site': 'Rs-Zeltoria',
   'https://api-xcoders.site': 'Frieren',
-  'https://api.xyroinee.xyz': 'uwgflzFEh6'
+  'https://api.xyroinee.xyz': 'uwgflzFEh6',
 };
 
 /** ************************/

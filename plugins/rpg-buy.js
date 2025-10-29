@@ -10,17 +10,17 @@ const handler = async (m, {conn, command, args}) => {
 ┌─「 *𝗡𝗢𝗧𝗔 𝗗𝗘 𝗣𝗔𝗚𝗢* 」
 ‣ *𝗖𝗼𝗺𝗽𝗿𝗮 𝗻𝗼𝗺𝗶𝗻𝗮𝗹* : + ${count}💎 
 ‣ *𝗚𝗮𝘀𝘁𝗮𝗱𝗼* : -${moneyperlimit * count} Coins 🪙
-└──────────────`, m,  {contextInfo: {
-'forwardingScore': 400,
-'isForwarded': false,
-externalAdReply: {
-showAdAttribution: false,
-title: `GRUPO DE WHATSAPP`,
-body: `🤍 Unete al grupo OFC`,
-mediaType: 1,
-sourceUrl: 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc',
-thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg'
-}}}, { quoted: m });
+└──────────────`, m, {contextInfo: {
+      'forwardingScore': 400,
+      'isForwarded': false,
+      'externalAdReply': {
+        showAdAttribution: false,
+        title: `GRUPO DE WHATSAPP`,
+        body: `🤍 Unete al grupo OFC`,
+        mediaType: 1,
+        sourceUrl: 'https://chat.whatsapp.com/Jql7XsV7V179fvOmKnEftc',
+        thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+      }}}, {quoted: m});
   } else conn.reply(m.chat, `no tienes suficientes *Coins* para comprar *${count}* Diamantes💎`, m);
 };
 handler.help = ['Buy <cantidad>', 'Buyall'];

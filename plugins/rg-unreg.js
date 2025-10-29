@@ -7,7 +7,7 @@ const handler = async function(m, {args}) {
   user.registered = false;
   m.reply(`eliminacion exitosa \n ya no estas registrado en el bot`);
 };
-handler.help = ['unreg <numero de serie>']
+handler.help = ['unreg <numero de serie>'];
 handler.tags = ['rg'];
 handler.command = /^unreg(ister)?$/i;
 handler.register = true;

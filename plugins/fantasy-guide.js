@@ -1,7 +1,7 @@
 // Código elaborado por: https://github.com/GataNina-Li
 
-let handler = async (m, { command, usedPrefix, conn, text }) => {
-let fantasy = `
+const handler = async (m, {command, usedPrefix, conn, text}) => {
+  const fantasy = `
 > *¡Bienvenido a la fascinante bitácora de Fantasy!*
 
 _Aquí, te proporcionaré información esencial para que te conviertas en un maestro en el emocionante mundo de los usuarios *Fantasy* en *GataBot*._
@@ -103,23 +103,23 @@ Utiliza el comando \`${usedPrefix}fantasyinfo o ${usedPrefix}fyinfo\` seguido de
 
 *¿Cómo puedo transferir la propiedad de un personaje comprado a otro usuario?*
 
-Con el comando \`${usedPrefix}fyentregar o ${usedPrefix}fytr\`, y mencionando el nombre del personaje y etiquentando a alguien o respondiendo al mensaje de un usuario, podrás transferir la propiedad del personaje al usuario deseado.`.trim()
-let pp = 'https://telegra.ph/file/9eb537c835d143e26250b.jpg'
-await conn.sendFile(m.chat, pp, 'error.jpg', fantasy, fkontak, true, {
-contextInfo: {
-'forwardingScore': 200,
-'isForwarded': false,
-externalAdReply: {
-showAdAttribution: false,
-title: `🌟 FANTASÍA RPG`,
-body: `🤍 Una aventura nos espera...`,
-mediaType: 1,
-sourceUrl: 'https://whatsapp.com/channel/0029VaPhM3S3wtbBXOzf6t0j',
-thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg'
-}}})
-}
+Con el comando \`${usedPrefix}fyentregar o ${usedPrefix}fytr\`, y mencionando el nombre del personaje y etiquentando a alguien o respondiendo al mensaje de un usuario, podrás transferir la propiedad del personaje al usuario deseado.`.trim();
+  const pp = 'https://telegra.ph/file/9eb537c835d143e26250b.jpg';
+  await conn.sendFile(m.chat, pp, 'error.jpg', fantasy, fkontak, true, {
+    contextInfo: {
+      'forwardingScore': 200,
+      'isForwarded': false,
+      'externalAdReply': {
+        showAdAttribution: false,
+        title: `🌟 FANTASÍA RPG`,
+        body: `🤍 Una aventura nos espera...`,
+        mediaType: 1,
+        sourceUrl: 'https://whatsapp.com/channel/0029VaPhM3S3wtbBXOzf6t0j',
+        thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+      }}});
+};
 
-handler.help = ['fyguia']
-handler.tags = ['rpg']
-handler.command = /^(fantasyguia|fyguia|fyguía|fantasyguide|fyguide)$/i
-export default handler
+handler.help = ['fyguia'];
+handler.tags = ['rpg'];
+handler.command = /^(fantasyguia|fyguia|fyguía|fantasyguide|fyguide)$/i;
+export default handler;

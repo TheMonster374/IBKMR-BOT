@@ -1,5 +1,5 @@
-let handler = async (m, { conn, command, text }) => {
- let chatbot = `
+const handler = async (m, {conn, command, text}) => {
+  const chatbot = `
 ┏━⊜「 *🎶​ 𝘼𝙐𝘿𝙄𝙊𝙎*」
 ┃
 ┃ 🔊​ anadieleimporta | a nadie le 
@@ -108,11 +108,12 @@ Recuerda que los audios deben estar activados en este grupo, usa *.on2 audios*
 
 > ${wm} ${author}
 `.trim();
-m.reply(chatbot, null, { mentions: conn.parseMention(chatbot) })}
+  m.reply(chatbot, null, {mentions: conn.parseMention(chatbot)});
+};
 
-handler.help = ['audi']
-handler.tags = ['fun']
-handler.command =/^(audi|Audi)/i
-handler.fail = null
-handler.register = true
-export default handler
+handler.help = ['audi'];
+handler.tags = ['fun'];
+handler.command =/^(audi|Audi)/i;
+handler.fail = null;
+handler.register = true;
+export default handler;

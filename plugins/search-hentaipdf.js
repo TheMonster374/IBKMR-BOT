@@ -24,8 +24,8 @@ const handler = async (m, {conn, text, usedPrefix, command, args}) => {
     throw `*[❌] Intenta con una categoria diferente*`;
   }
 };
-handler.help = ['hentaipdf']
-handler.tags = ['nsfw', 'search']
+handler.help = ['hentaipdf'];
+handler.tags = ['nsfw', 'search'];
 handler.command = /^(hentaipdf)$/i;
 export default handler;
 async function nhentaiScraper(id) {

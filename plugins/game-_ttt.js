@@ -1,4 +1,4 @@
-//creditos a als xdxd
+// creditos a als xdxd
 import {format} from 'util';
 const debugMode = !1;
 const winScore = 4999;

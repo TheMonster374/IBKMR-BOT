@@ -17,7 +17,7 @@ handler.all = async function(m) {
       stiker = await sticker(img, false, packname, author);
     } else if (/video/g.test(mime)) {
       if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return await m.reply(`el video no puede durar mas de 7 segundos\n\n*Para desactivar el autosticker escribe*: *#disable* autosticker`);
-         const img = await q.download();
+      const img = await q.download();
       if (!img) return;
       stiker = await sticker(img, false, packname, author);
     } else if (m.text.split(/\n| /i)[0]) {

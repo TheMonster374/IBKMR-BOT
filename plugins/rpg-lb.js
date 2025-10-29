@@ -10,8 +10,8 @@ const handler = async (m, {conn, args, participants}) => {
   const usersLevel = sortedLevel.map(enumGetKey);
   const len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 10)) : Math.min(10, sortedCoins.length);
   const adventurePhrases = [
-  "",
-];
+    '',
+  ];
   const randomAdventurePhrase = adventurePhrases[Math.floor(Math.random() * adventurePhrases.length)];
   const texto = `
 ┏━━━━━━━━━━━━━━•
@@ -32,7 +32,7 @@ const handler = async (m, {conn, args, participants}) => {
 ┃
 ┗━━━━━━━━━━━━━━•
 `.trim();
-  conn.sendMessage(m.chat, {text: texto, mentions: conn.parseMention(texto)}, {quoted: m})
+  conn.sendMessage(m.chat, {text: texto, mentions: conn.parseMention(texto)}, {quoted: m});
 };
 handler.help = ['lb'];
 handler.tags = ['rpg'];

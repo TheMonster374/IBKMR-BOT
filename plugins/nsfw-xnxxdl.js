@@ -34,12 +34,12 @@ const handler = async (m, {conn, args, command, usedPrefix}) => {
     throw '*porfavor vuelva a intentarlo*\n\n*- corrobore que el enlace sea similar a:*\n*https://www.xnxx.com/video-14lcwbe8/rubia_novia_follada_en_cuarto_de_bano*';
   }
 };
-handler.help = ['xnxx'] 
-handler.tags = ['nsfw']
-handler.command = ['xnxxsearch', 'xnxxdl', 'xnxx'] 
-handler.limit = 2
-handler.premium = false
-handler.register = true
+handler.help = ['xnxx'];
+handler.tags = ['nsfw'];
+handler.command = ['xnxxsearch', 'xnxxdl', 'xnxx'];
+handler.limit = 2;
+handler.premium = false;
+handler.register = true;
 
 export default handler;
 
@@ -66,4 +66,4 @@ async function xnxxdl(URL) {
       resolve({status: 200, result: {title, URL, duration, image, videoType, videoWidth, videoHeight, info, files}});
     }).catch((err) => reject({code: 503, status: false, result: err}));
   });
-                                                                                                            }
+}

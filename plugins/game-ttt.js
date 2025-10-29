@@ -1,4 +1,4 @@
-//creditos a ALS
+// creditos a ALS
 import TicTacToe from '../lib/tictactoe.js';
 const handler = async (m, {conn, usedPrefix, command, text}) => {
   conn.game = conn.game ? conn.game : {};

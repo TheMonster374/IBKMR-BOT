@@ -1,26 +1,27 @@
-//Créditos del código Starlight team 
+// Créditos del código Starlight team
 
 import cheerio from 'cheerio';
 import axios from 'axios';
 import fetch from 'node-fetch';
 
-let handler = async (m, { conn, args, command, usedPrefix }) => {
-if (!args[0]) throw `*[❗𝐈𝐍𝐅𝐎❗] Formato incorrecto*\nEjemplo:\n\n${usedPrefix + command} con mi prima`;
-try {
-let searchResults = await searchPornhub(args[0]);
-let teks = searchResults.result.map((v, i) => 
-`*P O R N H U B  - S E A R C H*
+const handler = async (m, {conn, args, command, usedPrefix}) => {
+  if (!args[0]) throw `*[❗𝐈𝐍𝐅𝐎❗] Formato incorrecto*\nEjemplo:\n\n${usedPrefix + command} con mi prima`;
+  try {
+    const searchResults = await searchPornhub(args[0]);
+    let teks = searchResults.result.map((v, i) =>
+      `*P O R N H U B  - S E A R C H*
 • *Título:* ${v.title}
 • *Duración:* ${v.duration}
 • *Vistas:* ${v.views}
 • *Link:* ${v.url}
 ---------------------------------------------------\n`).join('\n\n');
-if (searchResults.result.length === 0) {
-teks = '*Sin resultados*';
-}
-m.reply(teks);
-} catch (e) {
-}};
+    if (searchResults.result.length === 0) {
+      teks = '*Sin resultados*';
+    }
+    m.reply(teks);
+  } catch (e) {
+  }
+};
 handler.help = ['phsearch'];
 handler.tags = ['search'];
 handler.command = /^(phsearch|pornhubsearch)$/i;
@@ -36,13 +37,13 @@ async function searchPornhub(search) {
       const _duration = $(b).find('var.duration').text().trim();
       const _views = $(b).find('var.views').text().trim();
       const _url = 'https://www.pornhub.com' + $(b).find('a').attr('href');
-      const hasil = { title: _title, duration: _duration, views: _views, url: _url };
+      const hasil = {title: _title, duration: _duration, views: _views, url: _url};
       result.push(hasil);
     });
 
-    return { result };
+    return {result};
   } catch (error) {
     console.error('[❗𝐈𝐍𝐅𝐎❗] *Ocurrió un error al buscar en Pornhub:*', error);
-    return { result: [] };
+    return {result: []};
   }
 }

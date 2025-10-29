@@ -1,39 +1,39 @@
 import yts from 'yt-search';
-import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
+import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
 import axios from 'axios';
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw '*_Ingresa el nombre de una cancion_*\n\n`Ejemplo:`\n\n> .play Longtrail Inabakumori'
-try {
-let limit = 70;
-let ytse = await yts(text);
-let vid = ytse.all.find(v => v.type === "video");
-let q = '128kbps'
-let v = vid.url
-let yt = await (async () => {
-try {
-return await youtubedl(v)
-} catch {
-return await youtubedlv2(v)
-}
-})()
-let dl_url = await yt.audio[q].download()
-let [ttl, size] = await Promise.all([
-yt.title,
-yt.audio[q].fileSizeH,
-])
-let shortURL = await getTinyURL(v);
-let play = `*‣* *Nombre:* ${vid.title}
+const handler = async (m, {conn, text, usedPrefix, command}) => {
+  if (!text) throw '*_Ingresa el nombre de una cancion_*\n\n`Ejemplo:`\n\n> .play Longtrail Inabakumori';
+  try {
+    const limit = 70;
+    const ytse = await yts(text);
+    const vid = ytse.all.find((v) => v.type === 'video');
+    const q = '128kbps';
+    const v = vid.url;
+    const yt = await (async () => {
+      try {
+        return await youtubedl(v);
+      } catch {
+        return await youtubedlv2(v);
+      }
+    })();
+    const dl_url = await yt.audio[q].download();
+    const [ttl, size] = await Promise.all([
+      yt.title,
+      yt.audio[q].fileSizeH,
+    ]);
+    const shortURL = await getTinyURL(v);
+    const play = `*‣* *Nombre:* ${vid.title}
 *‣* *Tamaño:* ${size}
 *‣* *ID:* ${vid.videoId}
 *‣* *Link:* ${shortURL}
 
-*El audio se esta mandando espere*`.trim()
-conn.sendFile(m.chat, vid.thumbnail, '', play, m)
-let thumbnailBuffer = await axios.get("https://telegra.ph/file/8f3ca5a8841f26959aa69.jpg", { responseType: 'arraybuffer' })
-let buffer = await getBuffer(dl_url)
-let bufferSize = buffer.byteLength
-/*let contextInfo = {
+*El audio se esta mandando espere*`.trim();
+    conn.sendFile(m.chat, vid.thumbnail, '', play, m);
+    const thumbnailBuffer = await axios.get('https://telegra.ph/file/8f3ca5a8841f26959aa69.jpg', {responseType: 'arraybuffer'});
+    const buffer = await getBuffer(dl_url);
+    const bufferSize = buffer.byteLength;
+    /* let contextInfo = {
 forwardingScore: 99999,
 isForwarded: false,
 externalAdReply: {
@@ -44,27 +44,29 @@ mediaType: 2,
 sourceUrl: 'https://atom.bio/tm',
 thumbnail: Buffer.from(thumbnailBuffer.data),
 }}    */
-if (bufferSize <= limit * 1024 * 1024) { 
-conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3', /*contextInfo,*/ quoted: m })
-} else {
-if (bufferSize >= 180 * 1024 * 1024) { 
-return m.reply(`El archivo supera el límite de tamaño de descarga (150 MB) y excede el límite de 180 MB como documento.`)
-}
-conn.sendMessage(m.chat, { document: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3',/* contextInfo,*/ quoted: m })
-}} catch (error) {
-}}
-handler.help = ["play"].map(v => v + " <búsqueda>")
-handler.tags = ["downloader"]
-handler.command = ["play"]
-handler.limit = 1
-export default handler
+    if (bufferSize <= limit * 1024 * 1024) {
+      conn.sendMessage(m.chat, {audio: {url: dl_url}, mimetype: 'audio/mpeg', fileName: vid.title + '.mp3', /* contextInfo,*/ quoted: m});
+    } else {
+      if (bufferSize >= 180 * 1024 * 1024) {
+        return m.reply(`El archivo supera el límite de tamaño de descarga (150 MB) y excede el límite de 180 MB como documento.`);
+      }
+      conn.sendMessage(m.chat, {document: {url: dl_url}, mimetype: 'audio/mpeg', fileName: vid.title + '.mp3', /* contextInfo,*/ quoted: m});
+    }
+  } catch (error) {
+  }
+};
+handler.help = ['play'].map((v) => v + ' <búsqueda>');
+handler.tags = ['downloader'];
+handler.command = ['play'];
+handler.limit = 1;
+export default handler;
 
 async function getTinyURL(text) {
-try {
-let response = await axios.get(`https://tinyurl.com/api-create.php?url=${text}`);
-return response.data;
+  try {
+    const response = await axios.get(`https://tinyurl.com/api-create.php?url=${text}`);
+    return response.data;
   } catch (error) {
-    return text; 
+    return text;
   }
 }
 
@@ -72,14 +74,14 @@ async function getBuffer(url, options) {
   try {
     options = options || {};
     const res = await axios({
-      method: "get",
+      method: 'get',
       url,
       headers: {
         'DNT': 1,
-        'Upgrade-Insecure-Request': 1
+        'Upgrade-Insecure-Request': 1,
       },
       ...options,
-      responseType: 'arraybuffer'
+      responseType: 'arraybuffer',
     });
     return res.data;
   } catch (err) {
@@ -87,7 +89,7 @@ async function getBuffer(url, options) {
   }
 }
 
-/*import yts from 'yt-search';
+/* import yts from 'yt-search';
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 import axios from 'axios';
 
@@ -134,10 +136,10 @@ ${getlinkxyz}
 conn.sendFile(m.chat, vid.thumbnail, '', play, m);
 const buffer = await getBuffer(dl_url);
 const bufferSize = buffer.byteLength;
-if (bufferSize <= limit * 1024 * 1024) { 
+if (bufferSize <= limit * 1024 * 1024) {
 conn.sendMessage(m.chat, { audio: { url: dl_url }, fileName: `${ttl}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
 } else {
-if (bufferSize >= 180 * 1024 * 1024) { 
+if (bufferSize >= 180 * 1024 * 1024) {
 return m.reply(`El archivo supera el límite de tamaño de descarga (150 MB) y excede el límite de 180 MB como documento.`);
 }
 conn.sendMessage(m.chat, { document: { url: dl_url }, mimetype: 'audio/mpeg', fileName: `${ttl}.mp3` }, { quoted: m });
@@ -180,15 +182,7 @@ async function getBuffer(url, options){
 }*/
 
 
-
-
-
-
-
-
-
-
-/*import yts from 'yt-search';
+/* import yts from 'yt-search';
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 import axios from 'axios';
 
@@ -196,7 +190,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) throw `*Formato incorrecto*\nEjemplo:\n${usedPrefix + command} Mi corazón encantado`;
 try {
 let ytse = await yts(text);
-let vid = ytse.all.find(v => v.type === "video"); 
+let vid = ytse.all.find(v => v.type === "video");
 const q = '128kbps';
 const v = vid.url;
 const yt = await (async () => {
@@ -206,11 +200,11 @@ return await youtubedl(v);
 return await youtubedlv2(v);
 }
 })();
-const dl_url = await yt.audio[q].download(); 
+const dl_url = await yt.audio[q].download();
 const [ttl, size, getlinkxyz] = await Promise.all([
 yt.title,
 yt.audio[q].fileSizeH,
-getlink(dl_url), 
+getlink(dl_url),
 ]);
 
 let play = `❒═════❬ 𝐏𝐋𝐀𝐘 ❭═════╾❒
@@ -228,7 +222,7 @@ ${size}
 ┬
 ├‣ *Link* :
 ┴
-${getlinkxyz} 
+${getlinkxyz}
 ┬
 ❒═══════════════╾❒`.trim();
 conn.sendFile(m.chat, vid.thumbnail, '', play, m);
@@ -252,18 +246,7 @@ return dl_url;
 }}*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*import yts from 'yt-search';
+/* import yts from 'yt-search';
 import ytdl from 'ytdl-core';
 import fetch from 'node-fetch';
 
@@ -308,7 +291,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
       }
     } });
   } catch (error) {
-  
+
   }
 };
 handler.help = ["play"].map(v => v + " <búsqueda>");
