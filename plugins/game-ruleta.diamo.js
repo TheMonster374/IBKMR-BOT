@@ -1,5 +1,5 @@
 const handler = async (m, {conn, args, text, usedPrefix, command}) => {
-  const ruletaresultado = 'https://i.pinimg.com/originals/34/5d/dd/345ddd00b2854bdd4ba63.mp4';
+  const ruletaresultado = 'https://telegra.ph/file/8fd3db1eee3b458ec373b.mp4';
 
   const user = global.db.data.users[m.sender];
 

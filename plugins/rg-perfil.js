@@ -79,7 +79,7 @@ function formatHour(n, locale = 'en-US') {
 import PhoneNumber from 'awesome-phonenumber';
 import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, participants, isPrems}) => {
-  let pp = 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg';
+  let pp = 'https://telegra.ph/file/06cc652844ea19e8aed1c.jpg';
   const user = global.db.data.users[m.sender];
 const {money, joincount} = global.db.data.users[m.sender];
 const {exp, limit, level, role} = global.db.data.users[m.sender];

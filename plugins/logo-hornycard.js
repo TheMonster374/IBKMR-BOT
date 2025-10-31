@@ -1,7 +1,7 @@
 const handler = async (m, {conn}) => {
   const who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
   conn.sendFile(m.chat, global.API('https://some-random-api.com', '/canvas/horny', {
-    avatar: await conn.profilePictureUrl(who, 'image').catch((_) => 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg'),
+    avatar: await conn.profilePictureUrl(who, 'image').catch((_) => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'),
   }), 'hornycard.png', '_*Hornycard*_', m);
 };
 handler.help = ['hornycard'];

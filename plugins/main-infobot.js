@@ -44,7 +44,7 @@ const handler = async (m, {conn, usedPrefix}) => {
       irq: 0,
     },
   });
-  const pp = 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg';
+  const pp = 'https://telegra.ph/file/e454350e2031b86d0b362.jpg';
   const timestamp = speed();
   const latensi = speed() - timestamp;
   const uptime = `${clockString(process.uptime())}`;

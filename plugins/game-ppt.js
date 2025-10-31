@@ -1,6 +1,6 @@
 const handler = async (m, {conn, text, command, usedPrefix, args}) => {
 // let pp = 'https://www.bighero6challenge.com/images/thumbs/Piedra,-papel-o-tijera-0003318_1584.jpeg'
-  const pp = 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg';
+  const pp = 'https://telegra.ph/file/c7924bf0e0d839290cc51.jpg';
 
   // 60000 = 1 minuto // 30000 = 30 segundos // 15000 = 15 segundos // 10000 = 10 segundos
   const time = global.db.data.users[m.sender].wait + 10000;

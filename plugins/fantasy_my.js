@@ -464,15 +464,15 @@ ${personajesNoGustados > 0 ? txtDislike : personajesNoGustados}
 *✓ Nivel:* \`(${user.fantasy_character5}/11)\`
 *✓ Tipo:* _${contexto5}_
 `;
-  // let fake = { contextInfo: { externalAdReply: { title: `🌟 FANTASÍA RPG`, body: `😼 RPG de: » ${conn.getName(userId)}`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: 'https://i.pinimg.com/originals/2b/c1/06/2bc10639d4f5cf5685185.jpg' }}}
+  // let fake = { contextInfo: { externalAdReply: { title: `🌟 FANTASÍA RPG`, body: `😼 RPG de: » ${conn.getName(userId)}`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: 'https://telegra.ph/file/2bc10639d4f5cf5685185.jpg' }}}
   const image = [
-    'https://i.pinimg.com/originals/77/cd/4b/77cd4b654273b5cde1ce8.jpg',
-    'https://i.pinimg.com/originals/fe/b1/55/feb1553dffb7410556c8f.jpg',
-    'https://i.pinimg.com/originals/34/3d/26/343d26ea0d2621d47539c.jpg',
-    'https://i.pinimg.com/originals/2b/c1/06/2bc10639d4f5cf5685185.jpg',
+    'https://telegra.ph/file/77cd4b654273b5cde1ce8.jpg',
+    'https://telegra.ph/file/feb1553dffb7410556c8f.jpg',
+    'https://telegra.ph/file/343d26ea0d2621d47539c.jpg',
+    'https://telegra.ph/file/2bc10639d4f5cf5685185.jpg',
   ].getRandom();
   await conn.sendMessage(m.chat, {image: {url: image}, caption: mensaje.trim(), mentions: conn.parseMention(mensaje)}, fkontak);
-/* await conn.sendFile(m.chat, 'https://i.pinimg.com/originals/77/cd/4b/77cd4b654273b5cde1ce8.jpg', 'fantasy.jpg', mensaje.trim(), fkontak, null, {
+/* await conn.sendFile(m.chat, 'https://telegra.ph/file/77cd4b654273b5cde1ce8.jpg', 'fantasy.jpg', mensaje.trim(), fkontak, null, {
 contextInfo: {
 'forwardingScore': 200,
 'isForwarded': false,
@@ -483,7 +483,7 @@ title: `🌟 FANTASÍA RPG`,
 body: `😼 RPG de: » ${conn.getName(userId)}`,
 mediaType: 1,
 sourceUrl: accountsgb.getRandom(),
-thumbnailUrl: 'https://i.pinimg.com/originals/2b/c1/06/2bc10639d4f5cf5685185.jpg'
+thumbnailUrl: 'https://telegra.ph/file/2bc10639d4f5cf5685185.jpg'
 }}})*/
 // await conn.reply(m.chat, mensaje.trim(), fkontak, { mentions: conn.parseMention(mensaje) })
 };

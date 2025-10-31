@@ -16,7 +16,7 @@ const superlikeEmojisArrays = ['🩷', '❤️', '🧡', '💛', '💚', '🩵',
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
 
-  const pp = 'https://i.pinimg.com/originals/b4/f7/a6/b4f7a68e142e03ac84221.mp4';
+  const pp = 'https://telegra.ph/file/b4f7a68e142e03ac84221.mp4';
 
   try {
     const locale = 'es-ES';

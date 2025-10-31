@@ -30,7 +30,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
 
 *El audio se esta mandando espere*`.trim();
     conn.sendFile(m.chat, vid.thumbnail, '', play, m);
-    const thumbnailBuffer = await axios.get('https://i.pinimg.com/originals/8f/3c/a5/8f3ca5a8841f26959aa69.jpg', {responseType: 'arraybuffer'});
+    const thumbnailBuffer = await axios.get('https://telegra.ph/file/8f3ca5a8841f26959aa69.jpg', {responseType: 'arraybuffer'});
     const buffer = await getBuffer(dl_url);
     const bufferSize = buffer.byteLength;
     /* let contextInfo = {
@@ -267,7 +267,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     contextInfo: {
       externalAdReply: {
         title: 'Descarga de Canciones',
-        thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
+        thumbnailUrl: 'https://i.ibb.co/2jycYt8/images-1-6.jpg',
         sourceUrl: 'http://youtube.com/@Kriz_Chaan',
         mediaType: 1,
       }

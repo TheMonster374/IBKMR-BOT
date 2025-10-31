@@ -160,12 +160,12 @@ thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b1
     await conn.sendMessage(m.chat, menu, {quoted: fkontak2});
 
 
-    const pp = await conn.profilePictureUrl(conn.user.jid).catch((_) => 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg');
+    const pp = await conn.profilePictureUrl(conn.user.jid).catch((_) => 'https://telegra.ph/file/24fa902ead26340f3df2c.png');
 
 
-    const img = await (await fetch('https://i.pinimg.com/originals/8f/3c/a5/8f3ca5a8841f26959aa69.jpg')).buffer();
+    const img = await (await fetch('https://telegra.ph/file/1e79adfb814a15ff6d473.jpg')).buffer();
 
-    // 'https://i.pinimg.com/originals/8f/3c/a5/8f3ca5a8841f26959aa69.jpg'
+    // 'https://telegra.ph/file/1e79adfb814a15ff6d473.jpg'
 
 
     /*

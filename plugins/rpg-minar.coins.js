@@ -32,7 +32,7 @@ const handler = async (m, {conn, isPrems}) => { // lastmiming
     '👾 Gracias a que has minado tus ingresos suman',
     'Felicidades!! Ahora tienes', '⛏️⛏️⛏️ Obtienes'])}`;
 
-  const pp = 'https://i.pinimg.com/originals/77/cd/4b/77cd4b654273b5cde1ce8.jpg';
+  const pp = 'https://telegra.ph/file/ba9c040dfd3c6e6cf1034.jpg';
 
 
   // let xp = Math.floor(Math.random() * 2000)

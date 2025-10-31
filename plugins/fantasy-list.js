@@ -121,7 +121,7 @@ const handler = async (m, {command, usedPrefix, conn, text}) => {
     return conn.reply(m.chat, `Número de página inválido. Utiliza un número entre 1 y ${totalPages}.`, m);
   }
 
-  const pp = 'https://i.pinimg.com/originals/23/aa/da/23aadaec3f564f1f481bf.jpg';
+  const pp = 'https://telegra.ph/file/23aadaec3f564f1f481bf.jpg';
   await conn.sendFile(m.chat, pp, 'error.jpg', getFormattedReply(), fkontak, true, {
     contextInfo: {
       'forwardingScore': 200,

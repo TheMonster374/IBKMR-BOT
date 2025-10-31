@@ -5,7 +5,7 @@ import {levelup} from '../lib/canvas.js';
 import PhoneNumber from 'awesome-phonenumber';
 import {promises} from 'fs';
 import {join} from 'path';
-const img = 'https://i.pinimg.com/originals/da/4b/9b/da4b9b9a26146c50c951410d9d2f1037.jpg';
+const img = 'https://telegra.ph/file/8042958aa9b57a309c12e.jpg';
 const img2 = './src/Channel.jpg';
 const handler = async (m, {conn, usedPrefix, command, args, usedPrefix: _p, __dirname, isOwner, text, isAdmin, isROwner}) => {
   const {levelling} = '../lib/levelling.js';
@@ -102,10 +102,10 @@ _*Cuanto mas interactues con el bot mayor sera tu nivel!!*_
 `.trim();
     try {
       const img = await levelup(teks, user.level);
-      conn.sendMessage(m.chat, {image: {url: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif'}, caption: str, mentions: conn.parseMention(str)}, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100});
+      conn.sendMessage(m.chat, {image: {url: 'https://i.imgur.com/lMKaVHK.jpeg'}, caption: str, mentions: conn.parseMention(str)}, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100});
       // conn.sendFile(m.chat, img, 'levelup.jpg', str, m)
     } catch (e) {
-      /* conn.sendMessage(m.chat, {text: str, contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid:[who], image: {url: img}, "externalAdReply":  {"showAdAttribution": true, "renderLargerThumbnail": true, "thumbnail": img2.getRandom(), "title": wm, "containsAutoReply": true, "mediaType": 1, "mediaUrl": 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif', "sourceUrl": 'https://whatsapp.com/channel/0029VaPhM3S3wtbBXOzf6t0j', }}}, { quoted: m })*/
+      /* conn.sendMessage(m.chat, {text: str, contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid:[who], image: {url: img}, "externalAdReply":  {"showAdAttribution": true, "renderLargerThumbnail": true, "thumbnail": img2.getRandom(), "title": wm, "containsAutoReply": true, "mediaType": 1, "mediaUrl": 'https://i.imgur.com/lMKaVHK.jpeg', "sourceUrl": 'https://whatsapp.com/channel/0029VaPhM3S3wtbBXOzf6t0j', }}}, { quoted: m })*/
       conn.sendMessage(m.chat, {text: str,
         contextInfo: {
           'forwardingScore': 200,

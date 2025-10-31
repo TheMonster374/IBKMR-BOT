@@ -166,8 +166,8 @@ const handler = async (m, {conn, usedPrefix: _p, __dirname}) => {
     };
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name]);
 
-    const pp = 'https://i.pinimg.com/originals/53/9d/69/539d69f4262a13021ae3e.mp4';
-    const pp2 = 'https://i.pinimg.com/originals/b4/f7/a6/b4f7a68e142e03ac84221.mp4';
+    const pp = 'https://telegra.ph/file/539d69f4262a13021ae3e.mp4';
+    const pp2 = 'https://telegra.ph/file/539d69f4262a13021ae3e.mp4';
     conn.sendMessage(m.chat, {video: {url: [pp, pp2].getRandom()}, gifPlayback: true, caption: text.trim(), mentions: [m.sender]}, {contextInfo: {
       'forwardingScore': 200,
       'isForwarded': false,
