@@ -129,6 +129,8 @@ const question = (texto) => new Promise((resolver) => rl.question(texto, resolve
 
 // Código adaptado para la compatibilidad de ser bot con el código de 8 digitos.
 let opcion;
+
+/** 
 if (methodCodeQR) {
   opcion = '1';
 }
@@ -136,14 +138,15 @@ if (!methodCodeQR && !methodCode && !fs.existsSync(`./${global.authFile}/creds.j
   do {
     const lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》';
     opcion = await question('[ 🤍 ] Seleccione una opción:\n1. Con código QR\n2. Con código de texto de 8 dígitos\n---> ');
-    // if (fs.existsSync(`./${authFile}/creds.json`)) {
-    // console.log(chalk.bold.redBright(`PRIMERO BORRE EL ARCHIVO ${chalk.bold.greenBright("creds.json")} QUE SE ENCUENTRA EN LA CARPETA ${chalk.bold.greenBright(authFile)} Y REINICIE.`))
-    // process.exit()
     if (!/^[1-2]$/.test(opcion)) {
       console.log('[ ❗ ] Por favor, seleccione solo 1 o 2.\n');
     }
   } while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${global.authFile}/creds.json`));
 }
+*/
+
+// 🔥 FORZAR SIEMPRE QR (modo Render compatible)
+opcion = '1';
 
 const connectionOptions = {
   logger: pino({level: 'silent'}),
