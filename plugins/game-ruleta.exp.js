@@ -38,7 +38,7 @@ const handler = async (m, {conn, args, text, usedPrefix, command}) => {
         body: `🤍 Unete al canal OFC`,
         mediaType: 1,
         sourceUrl: 'https://whatsapp.com/channel/0029VabyyaKGehEIyunTGo0t',
-        thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+        thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
       }}}, {quoted: m});
 
   global.db.data.users[m.sender].lastrt = new Date * 1;

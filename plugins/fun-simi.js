@@ -21,7 +21,7 @@ const handler = async (m, {text, command, args, usedPrefix}) => {
 
             sourceUrl: 'https://whatsapp.com/channel/0029VabyyaKGehEIyunTGo0t',
 
-            thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+            thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
 
           }}});
   }

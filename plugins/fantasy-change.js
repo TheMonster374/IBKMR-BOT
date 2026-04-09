@@ -52,7 +52,7 @@ const handler = async (m, {command, usedPrefix, conn, text}) => {
           body: `😼 Personajes de: » ${conn.getName(userId)}`,
           mediaType: 1,
           sourceUrl: accountsgb,
-          thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+          thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
         }}}, {mentions: userId});
     return;
   }

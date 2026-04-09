@@ -115,7 +115,7 @@ Con el comando \`${usedPrefix}fyentregar o ${usedPrefix}fytr\`, y mencionando el
         body: `🤍 Una aventura nos espera...`,
         mediaType: 1,
         sourceUrl: 'https://whatsapp.com/channel/0029VaPhM3S3wtbBXOzf6t0j',
-        thumbnailUrl: 'https://i.imgur.com/yafZkFB.jpeg',
+        thumbnailUrl: 'https://i.pinimg.com/originals/b4/a1/91/b4a191e1d7f4d288f3b1204b159a9ff8.gif',
       }}});
 };
 
